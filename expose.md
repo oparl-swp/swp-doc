@@ -102,17 +102,20 @@
 9. Welche Hauptrisiken bestehen für den Erfolg? Wie wird ihre
    Eintrittswahrscheinlichkeit reduziert oder die Wirkungen des
    Eintretens beherrscht?
-    - Größtes Problem: Spezifikation wird geändert
-    - Abmildern durch:
-        - Erstmal nur die grundlegenden Tests Implementieren, solange
-          1.0 noch nicht veröffentlicht ist.
-        - Validator anpassbar machen, sowieso wichtig für zukünftige
-          Updates der Spezifikationen
-        - Häufige Kommunikation mit dem Kunden
+
+   Aufgrund der Tatsache, dass die zu validierende Norm noch nicht fertiggestellt ist, wird das Hauptrisiko dieses Projekts sein, dass die Spezifikation noch geändert werden könnte und der bereits ausgearbeitete Teil der Software angepasst werden müsste. Dies würde sich negativ auf die Zeitplanung des Projekts auswirken. Um dieses Problem abzumildern, sollen deswegen, bis Oparl die Version 1.0 erreicht, ausschließlich grundlegende Funktionen und Tests implementiert werden.
+
+    Außerdem soll der Validator, im Fall einer Änderung der Anforderungen, leicht anzupassen sein. Rege Kommunikation mit den Kunden soll dazu beitragen, dass beide Parteien immer auf dem aktuellen Stand der Dinge sind und um Fehler im Anforderungsmanagement schnell und effizient zu erkennen. 
+
+    Ebenso wichtig ist, dass die Mitarbeiter untereinander ausreichend kommunizieren, um auf das Ausfallen von Mitarbeitern gut reagieren können. 
+
+    Grundlegend ist mangelnde Robustheit, Benutzerfreundlichkeit und Performance ebenfalls ein nicht zu unterschätzendes Risiko, dem mit guter test-coverage (Testpyramide) entgegen gewirkt werden kann. 
+
+    Des Weiteren ist richtiges Zeitmanagement unumgänglich für das Projekt. Erreicht wird dies durch transparentes Projektmanagement und eine gute Informationspolititk untereinander.
 
 10. Auf Basis welcher Informationen sollen die Noten vergeben werden?
     Wann und in welcher Form werden diese zugänglich gemacht? (Jede/r
     Teilnehmer/in muss eine individuelle Note bekommen. Gruppennoten
     sind nicht erlaubt.)
-     - Idividulisierte Gruppennoten, welche durch aufstocken/abstufen
-       je nach Arbeitsumfang und Einsatz.
+
+    Es ist geplant, die Benotungen in Form einer individualisierten Gruppennote zu gestalten. Die Gruppe soll zuerst als Ganzes bewertet werden, um die Zäsuren anschließend individuell an den Arbeitsumfang und die Komplexität der Aufgabenbereiche jedes Einzelnen anzupassen. Die Individualisierung soll mithilfe eines Meetings zwischen dem wissenschaftlichen Mitarbeiter und den Teilnehmern des Softwareprojekts erleichtert werden. Durch die von den Projektteilnehmern ausgearbeitete Dokumentation wird eine fundierte Bewertung der einzelnen Teilnehmer durch den zuständigen Professor und seine wissenschaftlichen Mitarbeiter gefördert.

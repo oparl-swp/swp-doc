@@ -2,10 +2,13 @@
 
 1. Ausgangssituation im Projektumfeld, Projektziel (grob)
 
-    TODO
+  OParl ist ein offener Standard für parlamentarische Informationssysteme, der sich noch in Entwicklung befindet und voraussichtlich Anfang Juni verabschiedet wird. In einem parlamentarischen Informationssystem wird unter anderem gespeichert, welche Politiker den Ausschüssen angehören, die Sitzungsprotokolle und die zugehörigen Drucksachen. Diese Informationen sind öffentlich, werden in der Regel aber nicht in einem maschinenlesbaren Format, sondern nur auf einer Webseite zur Verfügung gestellt. Mit OParl soll man diese Daten auch mit einer standardisierten JSON-API abfragen können.
 
-    (Bitte auch Frontend-Projekt und Library erwähnen, da ich später
-    drauf Bezug nehme.)
+  Mit unserem Softwareprojekt wollen wir einen OParl-Validator bauen. Der Validator soll prüfen ob ein Informationssystem den Standard richtig umgesetzt hat, ähnlich einem HTML Validator. Er soll hauptsächlich Entwicklern von parlamentarischen Informationssystemen bei der Implementierung einer OParl Schnittstelle helfen. Er soll weiterhin Nutzern der OParl-API ermöglichen, zu testen, ob die Daten in einem System noch valide sind. Die Entwicklung eines Validators war von den OParl Entwicklern von vornherein vorgesehen. Wir wurden aus dem näheren Entwicklerumfeld gefragt, ob wir ihn im Rahmen eines Softwareprojekts realisieren wollen.
+
+  Der Validator soll als Konsolenanwendung und mit einem Webfrontend benutzbar sein. Er soll einzelne Dokumente, einen Teil oder den ganzen Datensatz testen können. Er soll optional semantische Tests durchführen können, die über die Spezifikation hinaus gehen, aber Auskunft über Fehler in den Daten geben können. Weiterhin soll er eine Statistik über die validierten Daten ausgeben können, zum Beispiel welche optionalen, empfohlenen oder nicht spezifierten Angaben in welchem Umfang enthalten waren.
+
+  Neben der Entwicklung des Validators wollen wir im Rahmen des Softwareprojekts auch den bestehenden Referenzserver überarbeiten und während der Review Phase den Standard auf Fehler überprüfen und gegebenfalls Feedback geben.
 
 2. Mitglieder des Projektteams; deren einschlägiges Vorwissen
 
@@ -95,9 +98,9 @@
     - Github
 
 8. Wie und wie oft wird der Kunde eingebunden?
-    - Vor Beginn des Projekts
-    - noch mehr?
-    - Bei Fertigstellung der Oparl Spezifikation
+  Unsere Kunden sind die OParl Entwickler. Da sie nicht aus Berlin kommen werden wir vorausichtlich voraussichtlich per EMail oder Telefon kommunizieren.
+  Zum Beginn unseres Softwareprojekts wollen wir ihnen unseren Plan schicken und uns Feedback einholen. In den nächsten Wochen wird OParl in die Review Phase kommen. Während dieser Phase werden wir unser Feedback und verbleibende Fragen zur Spezifikation schicken. Anschließend werden wir die Entwickler vorausichtlich zu jedem Meilenstein über den aktuellen Stand informieren.
+  Unsere Entwicklung wird auch auf Github verfolgbar sein.
 
 9. Welche Hauptrisiken bestehen für den Erfolg? Wie wird ihre
    Eintrittswahrscheinlichkeit reduziert oder die Wirkungen des

@@ -95,9 +95,7 @@ Es gibt mehrere Rollen die werden immer wieder neu vergeben.
 
 ## Wie und wie oft wird der Kunde eingebunden?
 
-Unsere Kunden sind die OParl Entwickler. Da sie nicht aus Berlin kommen werden wir vorausichtlich voraussichtlich per EMail oder Telefon kommunizieren.
-Zum Beginn unseres Softwareprojekts wollen wir ihnen unseren Plan schicken und uns Feedback einholen. In den nächsten Wochen wird OParl in die Review Phase kommen. Während dieser Phase werden wir unser Feedback und verbleibende Fragen zur Spezifikation schicken. Anschließend werden wir die Entwickler vorausichtlich zu jedem Meilenstein über den aktuellen Stand informieren.
-Unsere Entwicklung wird auch auf Github verfolgbar sein.
+Unsere Kunden sind die OParl-Entwickler. Da sie nicht aus Berlin kommen werden wir vorausichtlich voraussichtlich per E-Mail oder Telefon kommunizieren. Zum Beginn unseres Softwareprojekts wollen wir ihnen unseren Plan schicken und uns Feedback einholen. In den nächsten Wochen wird OParl in die Review-Phase kommen. Während dieser Zeit werden wir unser Feedback und verbleibende Fragen zur Spezifikation schicken. Anschließend werden wir die Entwickler vorausichtlich zu jedem Meilenstein über den aktuellen Stand informieren. Unsere Entwicklung wird auch auf GitHub verfolgbar sein.
 
 
 ## Welche Hauptrisiken bestehen für den Erfolg? Wie wird ihre Eintrittswahrscheinlichkeit reduziert oder die Wirkungen des Eintretens beherrscht?

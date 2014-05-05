@@ -62,22 +62,6 @@ zwei Wochen umfassen sollen.
    soll ein Crawler eine größere Anzahl von JSON-Objekten gezielt abrufen und in
    Bezugnahme aufeinander validieren können. (Vielleicht noch etwas erweitern.)
 
-- Absatz darüber, dass der Begriff der Iteration auf eine
-  Kanban-getriebene Methodologie schwerlich anwendbar ist, aber
-- dass wir uns Milestones setzen werden, um Struktur und
-  Berechenbarkeit in unsere Prozesse zu bringen.
-- Die Milestones
-    1. Minimaler Proof-of-Concept des Webinterfaces und der
-       Library, das alle JSONs rejectet
-    2. Test-Server erweitern und einige bereits vorhandene
-       Soll-Daten syntaktisch validieren
-    3. Test-Server hübsch machen und syntaktische Validierung
-       komplettieren
-    4. Syntaktische oder so JSON-LD-Validierung
-    5. Semantische Validierung unter Anwendung von Expertenwissens
-    6. Crawler
-- Etwa zwei Wochen pro Milestone.
-
 
 ## Welche softwaretechnischen Methoden sollen wann wofür wie intensiv
    eingesetzt werden?

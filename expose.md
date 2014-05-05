@@ -55,11 +55,10 @@ zwei Wochen umfassen sollen.
    Frontend-Projekt soll auch JSONs über HTTP und HTTPS abrufen und validieren
    können.
 4. Der Validator soll dahingehend erweitert worden sein, dass er auch JSON-LD-
-   Referenzen validiert, allerdings noch nicht unter Beachtung von Weltwissen
-   über die in den JSON-Objekten abgebildeten politischen Körper. Das Frontend-Projekt soll Hilfestellungen zur Lösung typischer Fehler leisten.
-5. Weltwissen soll miteinbezogen werden, um zu validieren, ob die abgebildeten
-   Strukturen tatsächlich existieren können. (Vielleicht noch etwas erweitern.)
-6. Um Hierarchien von Objekten vollständig und stichpunktartig validieren zu können,
+   Referenzen validiert, auch unter Beachtung von Weltwissen über die in den
+   JSON-Objekten abgebildeten politischen Körper. Das Frontend-Projekt soll
+   Hilfestellungen zur Lösung typischer Fehler leisten.
+5. Um Hierarchien von Objekten vollständig und stichpunktartig validieren zu können,
    soll ein Crawler eine größere Anzahl von JSON-Objekten gezielt abrufen und in
    Bezugnahme aufeinander validieren können. (Vielleicht noch etwas erweitern.)
 

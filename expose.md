@@ -17,13 +17,11 @@ Lucas, ist im achten Semester Bachelor Informatik. Hat gute
 Kenntnisse in Webentwicklung und grundlegende Kenntnisse in Python
 und Django.
 
-Johannes ist im vierten Fachsemester des Bachelor Informatik und hat bereits gute Java Kenntnisse und grundlegende Erfahrung mit Python, Haskell, Assemble und C. 
+Johannes ist im vierten Fachsemester des Bachelor Informatik und hat bereits gute Java-Kenntnisse und grundlegende Erfahrung mit Python, Haskell, Assemblersprache und C. 
 
 Telofy (alias Denis Drescher) ist im zweiten Semester des Informatik-Masters,
 benutzt seit fast zehn Jahren Python und hat seit 2010 als Backend-Entwickler
-in drei Firmen gearbeitet, die Python einsetzen. Er hat mehr Erfahrung
-mit Python als mit anderen Programmiersprachen, findet aber auch Haskell
-ganz flauschig.
+in drei Firmen gearbeitet, die Python einsetzen.
 
 - Universitärer Hintergrund
 - Beruflicher Hintergrund

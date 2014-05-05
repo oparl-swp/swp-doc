@@ -98,17 +98,10 @@ Unsere Kunden sind die OParl-Entwickler. Da sie nicht aus Berlin kommen werden w
 
 ## Welche Hauptrisiken bestehen für den Erfolg? Wie wird ihre Eintrittswahrscheinlichkeit reduziert oder die Wirkungen des Eintretens beherrscht?
 
-Aufgrund der Tatsache, dass die zu validierende Norm noch nicht fertiggestellt ist, wird das Hauptrisiko dieses Projekts sein, dass die Spezifikation noch geändert werden könnte und der bereits ausgearbeitete Teil der Software angepasst werden müsste. Dies würde sich negativ auf die Zeitplanung des Projekts auswirken. Um dieses Problem abzumildern, sollen deswegen, bis Oparl die Version 1.0 erreicht, ausschließlich grundlegende Funktionen und Tests implementiert werden.
-
-Außerdem soll der Validator, im Fall einer Änderung der Anforderungen, leicht anzupassen sein. Rege Kommunikation mit den Kunden soll dazu beitragen, dass beide Parteien immer auf dem aktuellen Stand der Dinge sind und um Fehler im Anforderungsmanagement schnell und effizient zu erkennen. 
-
-Ebenso wichtig ist, dass die Mitarbeiter untereinander ausreichend kommunizieren, um auf das Ausfallen von Mitarbeitern gut reagieren können. 
-
-Grundlegend ist mangelnde Robustheit, Benutzerfreundlichkeit und Performance ebenfalls ein nicht zu unterschätzendes Risiko, dem mit guter test-coverage (Testpyramide) entgegen gewirkt werden kann. 
-
-Des Weiteren ist richtiges Zeitmanagement unumgänglich für das Projekt. Erreicht wird dies durch transparentes Projektmanagement und eine gute Informationspolititk untereinander.
+Aufgrund der Tatsache, dass die zu validierende Norm noch nicht  fertiggestellt ist, wird das Hauptrisiko dieses Projekts sein, dass die  Spezifikation noch geändert werden könnte und der bereits ausgearbeitete  Teil der Software angepasst werden müsste. Um dieses Problem abzumildern, wollen wir bis Oparl die Version 1.0 erreicht, ausschließlich grundlegende Funktionen und Tests implementieren. Da die Tests unseres Validators für zukünftige OParl-Versionen leicht anpassbar sein sollen, werden unerwartete Änderungen zeitlich nicht zu schwer in Gewicht fallen.
+Außerdem soll rege Kommunikation mit den Kunden dazu beitragen, dass wir auf dem aktuellen Stand sind und über zukünftige Änderung in der Spezifikation informiert werden.
 
 
 ## Auf Basis welcher Informationen sollen die Noten vergeben werden? Wann und in welcher Form werden diese zugänglich gemacht? (Jede/r Teilnehmer/in muss eine individuelle Note bekommen. Gruppennoten sind nicht erlaubt.)
 
-Es ist geplant, die Benotungen in Form einer individualisierten Gruppennote zu gestalten. Die Gruppe soll zuerst als Ganzes bewertet werden, um die Zäsuren anschließend individuell an den Arbeitsumfang und die Komplexität der Aufgabenbereiche jedes Einzelnen anzupassen. Die Individualisierung soll mithilfe eines Meetings zwischen dem wissenschaftlichen Mitarbeiter und den Teilnehmern des Softwareprojekts erleichtert werden. Durch die von den Projektteilnehmern ausgearbeitete Dokumentation wird eine fundierte Bewertung der einzelnen Teilnehmer durch den zuständigen Professor und seine wissenschaftlichen Mitarbeiter gefördert.
+Wir schlagen vor die  Benotungen in Form einer individualisierten Gruppennote zu gestalten.  Die Gruppe soll zuerst als Ganzes bewertet werden, um die Zensuren  anschließend individuell an den Arbeitsumfang und die Komplexität der  Aufgabenbereiche jedes Einzelnen anzupassen. Die Individualisierung soll  mit Hilfe eines Meetings zwischen den wissenschaftlichen Mitarbeitern und den Teilnehmern des Softwareprojekts erleichtert werden. Durch die, von den Projektteilnehmern ausgearbeitete Dokumentation, welche detailierte Informationen über die Arbeiten der einzelenen Projektteilnehmer enthält,  wird eine fundierte Bewertung der einzelnen Teilnehmer durch den  zuständigen Professor und seine wissenschaftlichen Mitarbeiter,  gefördert.

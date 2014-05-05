@@ -2,13 +2,13 @@
 
 ## Ausgangssituation im Projektumfeld, Projektziel (grob)
 
-OParl ist ein offener Standard für parlamentarische Informationssysteme, der sich noch in Entwicklung befindet und voraussichtlich Anfang Juni verabschiedet wird. In einem parlamentarischen Informationssystem wird unter anderem gespeichert, welche Politiker den Ausschüssen angehören, die Sitzungsprotokolle und die zugehörigen Drucksachen. Diese Informationen sind öffentlich, werden in der Regel aber nicht in einem maschinenlesbaren Format, sondern nur auf einer Webseite zur Verfügung gestellt. Mit OParl soll man diese Daten auch mit einer standardisierten JSON-API abfragen können.
+OParl ist ein offener Standard für parlamentarische Informationssysteme, der sich noch in Entwicklung befindet und voraussichtlich Anfang Juni verabschiedet wird. In einem parlamentarischen Informationssystem wird unter anderem gespeichert, welche Politiker den Ausschüssen angehören; zudem werden dort die Sitzungsprotokolle und die zugehörigen Drucksachen vorgehalten. Diese Informationen sind öffentlich, werden in der Regel aber nicht in einem maschinenlesbaren Format, sondern nur auf einer Webseite zur Verfügung gestellt. Mit OParl soll man diese Daten auch mit einer standardisierten JSON-API abfragen können.
 
-Mit unserem Softwareprojekt wollen wir einen OParl-Validator bauen. Der Validator soll prüfen ob ein Informationssystem den Standard richtig umgesetzt hat, ähnlich einem HTML Validator. Er soll hauptsächlich Entwicklern von parlamentarischen Informationssystemen bei der Implementierung einer OParl Schnittstelle helfen. Er soll weiterhin Nutzern der OParl-API ermöglichen, zu testen, ob die Daten in einem System noch valide sind. Die Entwicklung eines Validators war von den OParl Entwicklern von vornherein vorgesehen. Wir wurden aus dem näheren Entwicklerumfeld gefragt, ob wir ihn im Rahmen eines Softwareprojekts realisieren wollen.
+Mit unserem Softwareprojekt wollen wir einen OParl-Validator bauen. Der Validator soll prüfen, ob ein Informationssystem den Standard richtig umgesetzt hat, ähnlich einem HTML-Validator. Er soll hauptsächlich Entwicklern von parlamentarischen Informationssystemen bei der Implementierung einer OParl-Schnittstelle helfen. Er soll weiterhin Nutzern der OParl-API ermöglichen, zu testen, ob die Daten in einem System noch valide sind. Die Entwicklung eines Validators war von den OParl-Entwicklern von vornherein vorgesehen. Wir wurden aus dem näheren Entwicklerumfeld gefragt, ob wir ihn im Rahmen eines Softwareprojekts realisieren wollen.
 
-Der Validator soll als Konsolenanwendung und mit einem Webfrontend benutzbar sein. Er soll einzelne Dokumente, einen Teil oder den ganzen Datensatz testen können. Er soll optional semantische Tests durchführen können, die über die Spezifikation hinaus gehen, aber Auskunft über Fehler in den Daten geben können. Weiterhin soll er eine Statistik über die validierten Daten ausgeben können, zum Beispiel welche optionalen, empfohlenen oder nicht spezifierten Angaben in welchem Umfang enthalten waren.
+Der Validator soll als Konsolenanwendung und mit einem Web-Frontend benutzbar sein. Er soll einzelne Dokumente, einen Teil oder den ganzen Datensatz testen können. Er soll optional semantische Tests durchführen können, die über die Spezifikation hinaus gehen, aber Auskunft über Fehler in den Daten geben können. Weiterhin soll er eine Statistik über die validierten Daten ausgeben können, zum Beispiel welche optionalen, empfohlenen oder nicht spezifierten Angaben in welchem Umfang enthalten waren.
 
-Neben der Entwicklung des Validators wollen wir im Rahmen des Softwareprojekts auch den bestehenden Referenzserver überarbeiten und während der Review Phase den Standard auf Fehler überprüfen und gegebenfalls Feedback geben.
+Neben der Entwicklung des Validators wollen wir im Rahmen des Softwareprojekts auch den bestehenden Referenzserver überarbeiten und während der Review-Phase den Standard auf Fehler überprüfen und gegebenfalls Feedback geben.
 
 
 ## Mitglieder des Projektteams; deren einschlägiges Vorwissen
@@ -54,9 +54,8 @@ zwei Wochen umfassen sollen.
    Frontend-Projekt soll auch JSONs über HTTP und HTTPS abrufen und validieren
    können.
 4. Der Validator soll auch JSON-LD-Referenzen validieren, auch unter Beachtung
-   von Weltwissen über die in den
-   JSON-Objekten abgebildeten politischen Körper. Das Frontend-Projekt soll
-   Hilfestellungen zur Lösung typischer Fehler leisten.
+   von Weltwissen über die in den JSON-Objekten abgebildeten politischen Körper.
+   Das Frontend-Projekt soll Hilfestellungen zur Lösung typischer Fehler leisten.
 5. Um Hierarchien von Objekten vollständig und stichpunktartig validieren zu können,
    soll ein Crawler eine größere Anzahl von JSON-Objekten gezielt abrufen und in
    Bezugnahme aufeinander validieren können.

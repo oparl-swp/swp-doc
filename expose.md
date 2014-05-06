@@ -158,7 +158,19 @@ Referenzen abgerufen werden. Dabei muss unter anderem darauf geachtet
 werden, dass Verweise auf bereits abgerufene Daten nicht erneut
 geladen werden müssen.
 
-- Webservice
+Eine wichtige Funktion wird der Webservice sein. Um den Validator
+möglichst einfach verfügbar zu machen, soll eine Webanwendung
+entstehen, die es ermöglicht einen erreichbaren Oparl-Server zu
+testen. Die Webanwendung soll eine URL oder eine JSON-Dokument
+entgegennehmen können und die Daten dann validieren und die Ergebnisse
+übersichtlich darstellen. Die Schnittstelle des Webservices wird dabei
+vermutlich anhand des REST-Standards implementiert. Da für eine
+umfassende Validierung der Crawler verwendet werden muss, muss darauf
+geachtet werden, dass eine Durchlauf lange dauern kann. Daher muss
+auch der spätere Zugriff auf die Ergebnisse möglich sein ohne einen
+neuen Durchlauf starten zu müssen. Eventuell sollte es auch möglich
+sein, einzelne Dokumente, die einen Fehler aufwiesen erneut zu
+validieren.
 
 
 ## Rollen und Zuständigkeiten

@@ -186,14 +186,11 @@ darstellt.
 
 ## Sprachen, Frameworks und Werkzeuge
 
-- Python
-- Buildout
-- Django oder Flask
-- Git
-- Circus
-- JSON/-LD
-- Spline Pad
-- GitHub
+- Den Validator wollen wir in Python 2 mit Support für Python 3 entwickeln
+- Für die Validierung wollen wir Schematics verwenden
+- Als Webframework wollen wir Django oder Flask, zusammen mit Circus verwenden
+- Als Buildtool wollen wir Buildout verwenden
+- Zur Quellcodeverwaltung wollen wir Git benutzen
 
 
 ## Kundenkontakt

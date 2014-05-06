@@ -105,10 +105,11 @@ verschiedenen Aufgaben als so genannte "Storries" formuliert. Diese
 Storries wandern in einer Art Tabelle (dem Kanbanboard) von links nach
 rechts. Die einzelnen Spalten repräsentieren dabei den Stand der
 Bearbeitung. Wenn die Aufgabe rechts angekommen ist, ist die Aufgabe
-fertig. Zur Verwaltung unseres Kanbanboards werden wir eine
-Webanwendung, wie zum Beispiel Trello, nutzen. Dies hat den Vorteil,
-dass kein Einrichtungsaufwand für die Software anfällt und sie sofort
-von allen Teammitgliedern im Browser genutzt werden kann.
+fertig. Jeder Entwickler kann dabei selber entscheiden, welche Storry
+er als nächstes bearbeitet. Zur Verwaltung unseres Kanbanboards werden
+wir eine Webanwendung, wie zum Beispiel Trello, nutzen. Dies hat den
+Vorteil, dass kein Einrichtungsaufwand für die Software anfällt und
+sie sofort von allen Teammitgliedern im Browser genutzt werden kann.
 
 Wir werden versuchen so weit wir mögliche test-getrieben zu
 entwickeln. Im Test-Driven-Development werden zuerst die Tests für die
@@ -117,7 +118,7 @@ danach wird dann eine Implementierung geschrieben, damit die Tests
 dann erfolgreich durchlaufen. Dies wird für den Teil der
 Validator-Library relativ einfach sein. Dort müssen wir größtenteils
 die Testdaten, die wir validieren wollen, anhand der Spezifikation
-erstellen, da der vorhandene Testserver nur sehr rudimentär Daten
+erstellen, da der vorhandene Referenzserver nur sehr rudimentär Daten
 liefen kann. Im Gegensatz dazu wird es bei der Webanwendung wesentlich
 schwieriger sein, alle Teile test-getrieben zu entwickeln. Viele Teile
 der Webanwendung werden eine graphische Schnittstelle betreffen und
@@ -127,10 +128,10 @@ Wie bei Projekten, bei denen viele Personen mitarbeiten, üblich,
 werdend wir zur Zusammenarbeit ein Versionskontrollsystem
 einsetzen. Wir haben uns für git entschieden, das sich diese in den
 letzten Jahren in vielen Bereichen durchgesetzt hat. Außerdem ist mit
-github eine Plattform verfügbar, die es ermöglicht den Sourcecode
+GitHub eine Plattform verfügbar, die es ermöglicht den Sourcecode
 einfach öffentlich verfügbar zu machen. Unsere ganze Entwicklung kann
 dort auch mitverfolgt werden. Die Oparl-Spezifikation wird außerdem
-ebenfalls auf github entwickelt und somit können dort Synergieeffekte
+ebenfalls auf GitHub entwickelt und somit können dort Synergieeffekte
 ausgenutzt werden.
 
 

@@ -137,8 +137,27 @@ ausgenutzt werden.
 
 ## Anspruchsvolle Informatiktechniken
 
-- Datenvalidierung
-- Crawler
+In unserem Projekt müssen wir verschiedene Techniken verwenden. Unter
+anderem müssen dir die Oparldaten validieren. Dies kann auf mehreren
+Wegen geschehen. Einerseits muss überprüft werden ob die Daten
+syntaktisch korrekt sind und dem Oparl-Schema entsprechen. Dieser
+Schritt kann mit Hilfe einer Bibliothek zur Validierung von
+JSON-Schemata gelöst werden. Andererseits müssen die Daten aber auch
+auf semantische Korrektheit geprüft werden. Diese beinhaltet neben der
+Korrektheit von Verweisen innerhalb von JSON-LD auf andere Objekte,
+auch die Validierung von logischen Randbedingungen. Diese können nur
+mit dem Entsprechenden Wissen validiert werden und können nicht, oder
+nur schwer, in einem JSON-Schema abgebildet werden.
+
+Für den umfassenden Test von einer echten Implementierung der
+Oparl-Standards werden wir alle vorhanden JSON Dokumente von dem
+Server abrufen müssen. Da es keine Liste mit einem Verweis auf alle
+Daten gibt, müssen diese Daten mit einem Crawler abgerufen
+werden. Über den Einstiegspunkt müssen alle rekursiv verfügbaren
+Referenzen abgerufen werden. Dabei muss unter anderem darauf geachtet
+werden, dass Verweise auf bereits abgerufene Daten nicht erneut
+geladen werden müssen.
+
 - Webservice
 
 

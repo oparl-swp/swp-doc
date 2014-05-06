@@ -36,7 +36,7 @@ welchem Umfang enthalten waren.
 Neben der Entwicklung des Validators wollen wir im Rahmen des
 Softwareprojekts auch den bestehenden Referenzserver überarbeiten und
 während der Review-Phase den Standard auf Fehler überprüfen und
-gegebenfalls Feedback geben.
+gegebenenfalls Feedback geben.
 
 
 ## Mitglieder des Projektteams und einschlägiges Vorwissen
@@ -67,7 +67,7 @@ Softwareentwicklung ein.
 Zur Strukturierung und zum Management der Entwicklungsprozesse möchten
 wir Kanban benutzen, welches das Prinzip des »Lean Development«
 propagiert. Iterationen, wie die Sprints im Scrum, sind somit
-optional. Stattdessen wollen wir den Projektaublauf durch Milestones
+optional. Stattdessen wollen wir den Projektablauf durch Milestones
 untergliedern, welche je etwa zwei Wochen umfassen sollen.
 
 1. Zwei Wochen nach Projektstart, wollen wir zwei minimale Projekte in
@@ -144,7 +144,7 @@ ausgenutzt werden.
 ## Rollen und Zuständigkeiten
 
 Durch Kanban gibt es kaum feste Rollen, da sie flüssig neu eingenommen
-werden, je nachdem welchen Task ein Entiwickler wählt.
+werden, je nachdem welchen Task ein Entwickler wählt.
 
 De-Facto-Rollen:
 - Lucas: Kontakt mit Kunden
@@ -166,12 +166,12 @@ De-Facto-Rollen:
 ## Kundenkontakt
 
 Unsere Kunden sind die OParl-Entwickler. Da sie nicht aus Berlin
-kommen werden wir vorausichtlich voraussichtlich per E-Mail oder
+kommen werden wir voraussichtlich voraussichtlich per E-Mail oder
 Telefon kommunizieren. Zum Beginn unseres Softwareprojekts wollen wir
 ihnen unseren Plan schicken und uns Feedback einholen. In den nächsten
 Wochen wird OParl in die Review-Phase kommen. Während dieser Zeit
 werden wir unser Feedback und verbleibende Fragen zur Spezifikation
-schicken. Anschließend werden wir die Entwickler vorausichtlich zu
+schicken. Anschließend werden wir die Entwickler voraussichtlich zu
 jedem Meilenstein über den aktuellen Stand informieren. Unsere
 Entwicklung wird auch auf GitHub verfolgbar sein.
 
@@ -179,7 +179,7 @@ Entwicklung wird auch auf GitHub verfolgbar sein.
 ## Risikomanagement
 
 Aufgrund der Tatsache, dass die zu validierende Norm noch nicht
-fertiggestellt ist, wird das Hauptrisiko dieses Projekts sein, dass
+fertig gestellt ist, wird das Hauptrisiko dieses Projekts sein, dass
 die  Spezifikation noch geändert werden könnte und der bereits
 ausgearbeitete  Teil der Software angepasst werden müsste. Um dieses
 Problem abzumildern, wollen wir bis Oparl die Version 1.0 erreicht,
@@ -202,8 +202,8 @@ und die Komplexität der Aufgabenbereiche jedes Einzelnen
 anzupassen. Die Individualisierung soll mit Hilfe eines Meetings
 zwischen den wissenschaftlichen Mitarbeitern und den Teilnehmern des
 Softwareprojekts erleichtert werden. Durch die, von den
-Projektteilnehmern ausgearbeitete Dokumentation, welche detailierte
-Informationen über die Arbeiten der einzelenen Projektteilnehmer
+Projektteilnehmern ausgearbeitete Dokumentation, welche detaillierte
+Informationen über die Arbeiten der einzelnen Projektteilnehmer
 enthält, wird eine fundierte Bewertung der einzelnen Teilnehmer durch
 den zuständigen Professor und seine wissenschaftlichen Mitarbeiter,
 gefördert.

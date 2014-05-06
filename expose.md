@@ -175,16 +175,13 @@ validieren.
 
 ## Rollen und Zuständigkeiten
 
-TODO!
-
 Durch Kanban gibt es kaum feste Rollen, da sie flüssig neu eingenommen
 werden, je nachdem welchen Task ein Entwickler wählt.
-Es wird jedoch kleine Rollen in der Form geben, dass Lucas als Kundenkontakt fungiert und Telofy, durch seine langjährige Erfahrung, in der Entwicklung mit Python, den Ansprechpartner für aufkommende Fragen darstellt. 
 
-
-De-Facto-Rollen:
-- Lucas: Kontakt mit Kunden
-- Telofy: Python-Fragen
+Es wird jedoch einige De-Facto-Rollen in der Form geben, dass Lucas als
+Kundenkontakt fungiert und Telofy, durch seine langjährige Erfahrung
+in der Entwicklung mit Python, den Ansprechpartner für aufkommende Fragen
+darstellt.
 
 
 ## Sprachen, Frameworks und Werkzeuge

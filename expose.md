@@ -99,81 +99,83 @@ untergliedern, welche je etwa zwei Wochen umfassen sollen.
 ## Softwaretechnische Methoden
 
 Wir werden unser Projekt agil entwickeln. Dafür werden wir Kanban
-einsetzen. Im Gegensatz zu Scrum, hat Kanban wesentlich weniger Regeln
-und somit ist weniger Verwaltungsaufwand nötig. Bei Kanban werden die
-verschiedenen Aufgaben als so genannte "Storries" formuliert. Diese
-Storries wandern in einer Art Tabelle (dem Kanbanboard) von links nach
+einsetzen. Im Gegensatz zu Scrum, hat Kanban wesentlich weniger Regeln,
+wodurch weniger Verwaltungsaufwand nötig ist. Bei Kanban werden die
+verschiedenen Aufgaben als so genannte Stories formuliert. Diese
+Stories wandern in einer Art Tabelle (dem Kanban-Board) von links nach
 rechts. Die einzelnen Spalten repräsentieren dabei den Stand der
 Bearbeitung. Wenn die Aufgabe rechts angekommen ist, ist die Aufgabe
-fertig. Jeder Entwickler kann dabei selber entscheiden, welche Storry
-er als nächstes bearbeitet. Zur Verwaltung unseres Kanbanboards werden
+fertig. Jeder Entwickler kann dabei selber entscheiden, welche Story
+er als nächstes bearbeitet. Zur Verwaltung unseres Kanban-Boards werden
 wir eine Webanwendung, wie zum Beispiel Trello, nutzen. Dies hat den
 Vorteil, dass kein Einrichtungsaufwand für die Software anfällt und
 sie sofort von allen Teammitgliedern im Browser genutzt werden kann.
 
-Wir werden versuchen so weit wir mögliche test-getrieben zu
-entwickeln. Im Test-Driven-Development werden zuerst die Tests für die
-Software geschrieben, die am Beginn erst einmal fehlschlagen. Erst
+Wir werden versuchen so weit wie möglich Test-getrieben zu
+entwickeln. Im *test-driven development* werden zuerst die Tests für die
+Software geschrieben, die zu Beginn erst einmal fehlschlagen. Erst
 danach wird dann eine Implementierung geschrieben, damit die Tests
-dann erfolgreich durchlaufen. Dies wird für den Teil der
+erfolgreich durchlaufen. Dies wird für den Teil der
 Validator-Library relativ einfach sein. Dort müssen wir größtenteils
 die Testdaten, die wir validieren wollen, anhand der Spezifikation
 erstellen, da der vorhandene Referenzserver nur sehr rudimentär Daten
-liefen kann. Im Gegensatz dazu wird es bei der Webanwendung wesentlich
-schwieriger sein, alle Teile test-getrieben zu entwickeln. Viele Teile
-der Webanwendung werden eine graphische Schnittstelle betreffen und
+liefen kann. Im Gegensatz dazu, wird es bei der Webanwendung wesentlich
+schwieriger sein, alle Teile Test-getrieben zu entwickeln. Viele Teile
+der Webanwendung werden eine graphische Schnittstelle betreffen, und
 sind daher schwer zu testen.
 
 Wie bei Projekten, bei denen mehrere Personen zusammenarbeiten, üblich,
 werden wir zur Zusammenarbeit ein Versionskontrollsystem
-einsetzen. Wir haben uns für gitHub entschieden, da sich dieses in den
+einsetzen. Wir haben uns für GitHub entschieden, da sich dieses in den
 letzten Jahren in vielen Bereichen durchgesetzt hat. Außerdem ist mit
 GitHub eine Plattform verfügbar, die es ermöglicht den Sourcecode
 einfach öffentlich verfügbar zu machen. Unsere ganze Entwicklung kann
 dort auch mitverfolgt werden. Die Oparl-Spezifikation wird außerdem
-ebenfalls auf GitHub entwickelt und somit können dort Synergieeffekte
-ausgenutzt werden.
+ebenfalls auf GitHub entwickelt, so dass dort Synergie-Effekte
+ausgenutzt werden können.
 
 
 ## Anspruchsvolle Informatiktechniken
 
 In unserem Projekt müssen wir verschiedene Techniken verwenden. Unter
-Anderem müssen wir die Oparl-Daten validieren. Dies muss auf mehreren
-Wegen geschehen. Einerseits muss überprüft werden ob die Daten
-syntaktisch korrekt sind und dem Oparl-Schema entsprechen. Dieser
+anderem müssen wir die OParl-Daten validieren. Dies muss auf mehreren
+Wegen geschehen. Einerseits muss überprüft werden, ob die Daten
+syntaktisch korrekt sind und dem OParl-Schema entsprechen. Dieser
 Schritt kann mit Hilfe einer Bibliothek zur Validierung von
 JSON-Schemata gelöst werden. Andererseits müssen die Daten aber auch
 auf semantische Korrektheit geprüft werden. Diese beinhaltet neben der
 Korrektheit von Verweisen innerhalb von JSON-LD auf andere Objekte,
 auch die Validierung von logischen Randbedingungen. Diese können nur
-mit dem Entsprechenden Wissen validiert werden und können nicht, oder
+mit dem entsprechenden Wissen validiert werden und können nicht, oder
 nur schwer, in einem JSON-Schema abgebildet werden.
 
 Für den umfassenden Test von einer echten Implementierung des
-Oparl-Standards werden wir alle vorhanden JSON Dokumente von dem
+OParl-Standards werden wir alle vorhanden JSON-Dokumente von dem
 Server abrufen müssen. Da es keine Liste mit einem Verweis auf alle
 Daten gibt, müssen diese Daten mit einem Crawler abgerufen
 werden. Über den Einstiegspunkt müssen alle rekursiv verfügbaren
-Referenzen abgerufen werden. Dabei muss unter Anderem darauf geachtet
+Referenzen abgerufen werden. Dabei muss unter anderem darauf geachtet
 werden, dass Verweise auf bereits abgerufene Daten nicht erneut
 geladen werden müssen.
 
 Eine wichtige Funktion wird der Webservice darstellen. Um den Validator
 möglichst einfach verfügbar zu machen, soll eine Webanwendung
-entstehen, die es ermöglicht einen erreichbaren Oparl-Server zu
-testen. Die Webanwendung soll eine URL oder eine JSON-Dokument
-entgegennehmen können und die Daten dann validieren uum die Ergebnisse
-dann übersichtlich darzustellen. Die Schnittstelle des Webservices wird dabei
+entstehen, die es ermöglicht einen erreichbaren OParl-Server zu
+testen. Die Webanwendung soll eine URL oder ein JSON-Dokument
+entgegennehmen können und die Daten validieren. Letztlich soll sie die Ergebnisse
+übersichtlich darstellen. Die Schnittstelle des Webservices wird dabei
 vermutlich anhand des REST-Standards implementiert. Da für eine
 umfassende Validierung der Crawler verwendet wird, muss darauf
 geachtet werden, dass ein Durchlauf länger dauern kann. Daher muss
 auch der spätere Zugriff auf die Ergebnisse möglich sein ohne einen
 neuen Durchlauf starten zu müssen. Eventuell sollte es auch möglich
-sein, einzelne Dokumente, die einen Fehler aufwiesen erneut zu
+sein, einzelne Dokumente, die einen Fehler aufwiesen, erneut zu
 validieren.
 
 
 ## Rollen und Zuständigkeiten
+
+TODO!
 
 Durch Kanban gibt es kaum feste Rollen, da sie flüssig neu eingenommen
 werden, je nachdem welchen Task ein Entwickler wählt.

@@ -124,9 +124,9 @@ schwieriger sein, alle Teile test-getrieben zu entwickeln. Viele Teile
 der Webanwendung werden eine graphische Schnittstelle betreffen und
 sind daher schwer zu testen.
 
-Wie bei Projekten, bei denen viele Personen mitarbeiten, üblich,
-werdend wir zur Zusammenarbeit ein Versionskontrollsystem
-einsetzen. Wir haben uns für git entschieden, das sich diese in den
+Wie bei Projekten, bei denen mehrere Personen zusammenarbeiten, üblich,
+werden wir zur Zusammenarbeit ein Versionskontrollsystem
+einsetzen. Wir haben uns für gitHub entschieden, da sich dieses in den
 letzten Jahren in vielen Bereichen durchgesetzt hat. Außerdem ist mit
 GitHub eine Plattform verfügbar, die es ermöglicht den Sourcecode
 einfach öffentlich verfügbar zu machen. Unsere ganze Entwicklung kann
@@ -138,7 +138,7 @@ ausgenutzt werden.
 ## Anspruchsvolle Informatiktechniken
 
 In unserem Projekt müssen wir verschiedene Techniken verwenden. Unter
-anderem müssen wir die Oparl-Daten validieren. Dies muss auf mehreren
+Anderem müssen wir die Oparl-Daten validieren. Dies muss auf mehreren
 Wegen geschehen. Einerseits muss überprüft werden ob die Daten
 syntaktisch korrekt sind und dem Oparl-Schema entsprechen. Dieser
 Schritt kann mit Hilfe einer Bibliothek zur Validierung von
@@ -149,24 +149,24 @@ auch die Validierung von logischen Randbedingungen. Diese können nur
 mit dem Entsprechenden Wissen validiert werden und können nicht, oder
 nur schwer, in einem JSON-Schema abgebildet werden.
 
-Für den umfassenden Test von einer echten Implementierung der
+Für den umfassenden Test von einer echten Implementierung des
 Oparl-Standards werden wir alle vorhanden JSON Dokumente von dem
 Server abrufen müssen. Da es keine Liste mit einem Verweis auf alle
 Daten gibt, müssen diese Daten mit einem Crawler abgerufen
 werden. Über den Einstiegspunkt müssen alle rekursiv verfügbaren
-Referenzen abgerufen werden. Dabei muss unter anderem darauf geachtet
+Referenzen abgerufen werden. Dabei muss unter Anderem darauf geachtet
 werden, dass Verweise auf bereits abgerufene Daten nicht erneut
 geladen werden müssen.
 
-Eine wichtige Funktion wird der Webservice sein. Um den Validator
+Eine wichtige Funktion wird der Webservice darstellen. Um den Validator
 möglichst einfach verfügbar zu machen, soll eine Webanwendung
 entstehen, die es ermöglicht einen erreichbaren Oparl-Server zu
 testen. Die Webanwendung soll eine URL oder eine JSON-Dokument
-entgegennehmen können und die Daten dann validieren und die Ergebnisse
-übersichtlich darstellen. Die Schnittstelle des Webservices wird dabei
+entgegennehmen können und die Daten dann validieren uum die Ergebnisse
+dann übersichtlich darzustellen. Die Schnittstelle des Webservices wird dabei
 vermutlich anhand des REST-Standards implementiert. Da für eine
-umfassende Validierung der Crawler verwendet werden muss, muss darauf
-geachtet werden, dass eine Durchlauf lange dauern kann. Daher muss
+umfassende Validierung der Crawler verwendet wird, muss darauf
+geachtet werden, dass ein Durchlauf länger dauern kann. Daher muss
 auch der spätere Zugriff auf die Ergebnisse möglich sein ohne einen
 neuen Durchlauf starten zu müssen. Eventuell sollte es auch möglich
 sein, einzelne Dokumente, die einen Fehler aufwiesen erneut zu

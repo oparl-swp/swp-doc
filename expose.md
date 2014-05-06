@@ -180,8 +180,8 @@ werden, je nachdem welchen Task ein Entwickler wählt.
 
 Es wird jedoch einige De-Facto-Rollen in der Form geben, dass Lucas als
 Kundenkontakt fungiert und Telofy, durch seine langjährige Erfahrung
-in der Entwicklung mit Python, den Ansprechpartner für aufkommende Fragen
-darstellt.
+in der Entwicklung mit Python, die passenden Libraries und Frameworks
+auswählt.
 
 
 ## Sprachen, Frameworks und Werkzeuge

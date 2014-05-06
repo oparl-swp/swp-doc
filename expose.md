@@ -202,8 +202,7 @@ ihnen unseren Plan schicken und uns Feedback einholen. In den nächsten
 Wochen wird OParl in die Review-Phase kommen. Während dieser Zeit
 werden wir unser Feedback und verbleibende Fragen zur Spezifikation
 schicken. Anschließend werden wir die Entwickler voraussichtlich zu
-jedem Meilenstein über den aktuellen Stand informieren. Unsere
-Entwicklung wird auch auf GitHub verfolgbar sein.
+jedem Meilenstein über den aktuellen Stand informieren. 
 
 
 ## Risikomanagement

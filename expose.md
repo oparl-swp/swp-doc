@@ -179,6 +179,8 @@ TODO!
 
 Durch Kanban gibt es kaum feste Rollen, da sie flüssig neu eingenommen
 werden, je nachdem welchen Task ein Entwickler wählt.
+Es wird jedoch kleine Rollen in der Form geben, dass Lucas als Kundenkontakt fungiert und Telofy, durch seine langjährige Erfahrung, in der Entwicklung mit Python, den Ansprechpartner für aufkommende Fragen darstellt. 
+
 
 De-Facto-Rollen:
 - Lucas: Kontakt mit Kunden

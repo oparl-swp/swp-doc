@@ -138,7 +138,7 @@ ausgenutzt werden.
 ## Anspruchsvolle Informatiktechniken
 
 In unserem Projekt müssen wir verschiedene Techniken verwenden. Unter
-anderem müssen dir die Oparldaten validieren. Dies kann auf mehreren
+anderem müssen wir die Oparl-Daten validieren. Dies muss auf mehreren
 Wegen geschehen. Einerseits muss überprüft werden ob die Daten
 syntaktisch korrekt sind und dem Oparl-Schema entsprechen. Dieser
 Schritt kann mit Hilfe einer Bibliothek zur Validierung von

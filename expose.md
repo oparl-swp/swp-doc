@@ -41,7 +41,7 @@ gegebenenfalls Feedback geben.
 
 ## Mitglieder des Projektteams und einschlägiges Vorwissen
 
-Lucas, ist im achten Semester Bachelor Informatik. Hat gute
+Lucas, ist im achten Semester Bachelor Informatik. Er hat gute
 Kenntnisse in Webentwicklung und grundlegende Kenntnisse in Python
 und Django.
 

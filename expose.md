@@ -224,9 +224,12 @@ Spezifikation informiert werden.
 
 ## Anforderungen an die Validierung
 
-Location: 
+1. Backlinks sollten, sofern semantisch zwingened, zu dem richtigen Objekt
+   zurückverweisen.
+2. Die Felder `name` und `fileName` von `Document` sollen nicht identisch sein.
+3. JSON-Objekte vom Typ `Location` können Namen und Geo-Koordinaten enthalten.
+   Es gilt die Übereinstimmung dieser Daten zu validieren.
 
-   -  Json Objekte vom Typ Location können Namen und Geo-Koordinaten enthalten. Es gilt die Übereinstimmung dieser Daten       zu validieren.
 
 ## Benotung
 

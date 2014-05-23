@@ -197,7 +197,7 @@ auswählt.
 ## Kundenkontakt
 
 Unsere Kunden sind die OParl-Entwickler. Da sie nicht aus Berlin
-kommen werden wir voraussichtlich voraussichtlich per E-Mail oder
+kommen werden wir voraussichtlich per E-Mail oder
 Telefon kommunizieren. Zum Beginn unseres Softwareprojekts wollen wir
 ihnen unseren Plan schicken und uns Feedback einholen. In den nächsten
 Wochen wird OParl in die Review-Phase kommen. Während dieser Zeit

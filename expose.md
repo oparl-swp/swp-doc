@@ -222,6 +222,11 @@ wir auf dem aktuellen Stand sind und über zukünftige Änderung in der
 Spezifikation informiert werden.
 
 
+## Anforderungen an die Validierung
+
+Location: 
+
+   -  Json Objekte vom Typ Location können Namen und Geo-Koordinaten enthalten. Es gilt die Übereinstimmung dieser Daten       zu validieren.
 ## Benotung
 
 Wir schlagen vor die Benotungen in Form einer individualisierten

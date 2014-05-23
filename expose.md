@@ -230,6 +230,11 @@ Spezifikation informiert werden.
 2. Die Felder `name` und `fileName` von `Document` sollen nicht identisch sein.
 3. JSON-Objekte vom Typ `Location` können Namen und Geo-Koordinaten enthalten.
    Es gilt die Übereinstimmung dieser Daten zu validieren.
+4. Auf jedem System muss genau ein Objekt vom Typ oparl:System verfügbar sein.
+5. Elemente "rgs" eines oparl:Body sind zwölfstellig und können im Web nachgeschlagen werden.
+6. Elemente "status" eines oparl:Person sollen, so vorhanden, die weibliche und die männliche Form des Wertes in genau dieser Reihenfolge enthalten.
+7. Jedem Mitglied einer oparl:Oraganization soll ein Objekt oparl:Person zugehörig sein.
+8. Elemente "post" eines oparl:Organization sollen, so vorhanden, die weibliche und die männliche Form des Wertes in genau dieser Reihenfolge enthalten.
 
 
 ## Benotung

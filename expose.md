@@ -61,6 +61,7 @@ mitgearbeitet. Zur Zeit arbeitet er als Studentische Hilfskraft bei
 der ZEDAT und setzt dort hauptsächlich C und Perl zur
 Softwareentwicklung ein.
 
+Ronald ist im achten Semester Bachelor Informatik. Er hat bisher keinerlei Kenntniss von Python und setzt sich beruflich und privat zumeist mit der Sprache PHP auseinander.
 
 ## Zeitplan und Milestones
 

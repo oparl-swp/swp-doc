@@ -15,29 +15,42 @@ standardisierten JSON-API abfragen können.
 
 Mit unserem Softwareprojekt wollen wir einen OParl-Validator
 bauen. Der Validator soll prüfen, ob ein Informationssystem den
-Standard richtig umgesetzt hat, ähnlich einem HTML-Validator. Er soll
-hauptsächlich Entwicklern von parlamentarischen Informationssystemen
-bei der Implementierung einer OParl-Schnittstelle helfen. Er soll
-weiterhin Nutzern der OParl-API ermöglichen, zu testen, ob die Daten
-in einem System noch valide sind. Die Entwicklung eines Validators war
-von den OParl-Entwicklern von vornherein vorgesehen. Wir wurden aus
-dem näheren Entwicklerumfeld gefragt, ob wir ihn im Rahmen eines
-Softwareprojekts realisieren wollen.
+Standard richtig umgesetzt hat, ähnlich einem HTML-Validator.
+Die Entwicklung eines Validators war von den OParl-Entwicklern von
+vornherein vorgesehen. Wir wurden aus dem näheren Entwicklerumfeld
+gefragt, ob wir ihn im Rahmen eines Softwareprojekts realisieren wollen.
 
-Der Validator soll als Konsolenanwendung und mit einem Web-Frontend
-benutzbar sein. Er soll einzelne Dokumente, einen Teil oder den ganzen
-Datensatz testen können. Er soll optional semantische Tests
-durchführen können, die über die Spezifikation hinaus gehen, aber
-Auskunft über Fehler in den Daten geben können. Weiterhin soll er eine
-Statistik über die validierten Daten ausgeben können, zum Beispiel
-welche optionalen, empfohlenen oder nicht spezifierten Angaben in
-welchem Umfang enthalten waren.
+Wir wollen den Validator als Library programmieren und darauf aufbauend
+eine Konsolenanwendung und einen Webservice.
+
+**Die Konsolenanwendung** ist hauptsächlich für RIS-Entwickler gedacht
+und soll bei der Entwicklung einer OParl-Schnittstelle helfen.
+Sie soll in der Lage sein den gesamten Datensatz oder eine wählbare Teilmenge
+zu testen, zum Beispiel soll man den Testlauf auf Dokumente von
+bestimmten Typen begrenzen können und auch eine maximal Anzahl an zu
+testenden Dokumenten pro Typ festlgen können. Die Fehlerausgabe soll
+das Problem genau beschreiben und eine Lösung vorschlagen. Die Konsolenanwendung
+soll leicht installierbar sein, auf allen Plattformen laufen und sich
+in bestehende Testsysteme (z.B. Jenkins) einbinden lassen.
+
+**Der Webservice** soll auf der offiziellen OParl Webseite angeboten
+werden. Nutzer sollen OParl Instanzen testen lassen können, die Ausgabe soll einem 
+Zertifikat gleichen. Mit Hilfe der Testergebnisse soll eine
+Übersicht über aktuelle verfügbare Oparl Instanzen erstellt werden.
+Bei jedem Testlauf soll auch eine Statistik über die Daten erstellt werden,
+unter anderem mit der Information welche empfohlenen Eigenschaften in welchem Umfang
+umgesetzt wurden. Weiterhin wollen wir ein paar semantische Tests implementieren,
+die über die Spezifikation hinaus gehen, aber Auskunft über die Qualität
+der Daten geben können. 
 
 Neben der Entwicklung des Validators wollen wir im Rahmen des
 Softwareprojekts auch den bestehenden Referenzserver überarbeiten und
 während der Review-Phase den Standard auf Fehler überprüfen und
-gegebenenfalls Feedback geben.
-
+gegebenenfalls Feedback geben. Weiterhin wollen wir unseren Quellcode
+dokumentieren, eine Bedienungsanleitung für den Validator schreiben,
+das Datenmodell von OParl visualisieren und Beispieldaten erstellen um 
+Entwickler bei der Implementierung einer OParl-Schnittstelle zu 
+unterstützen.
 
 ## Mitglieder des Projektteams und einschlägiges Vorwissen
 
@@ -162,16 +175,16 @@ geladen werden müssen.
 Eine wichtige Funktion wird der Webservice darstellen. Um den Validator
 möglichst einfach verfügbar zu machen, soll eine Webanwendung
 entstehen, die es ermöglicht einen erreichbaren OParl-Server zu
-testen. Die Webanwendung soll eine URL oder ein JSON-Dokument
-entgegennehmen können und die Daten validieren. Letztlich soll sie die Ergebnisse
+testen. Die Webanwendung soll eine URL entgegennehmen können
+und die Daten validieren. Letztlich soll sie die Ergebnisse
 übersichtlich darstellen. Die Schnittstelle des Webservices wird dabei
 vermutlich anhand des REST-Standards implementiert. Da für eine
 umfassende Validierung der Crawler verwendet wird, muss darauf
 geachtet werden, dass ein Durchlauf länger dauern kann. Daher muss
 auch der spätere Zugriff auf die Ergebnisse möglich sein ohne einen
-neuen Durchlauf starten zu müssen. Eventuell sollte es auch möglich
-sein, einzelne Dokumente, die einen Fehler aufwiesen, erneut zu
-validieren.
+neuen Durchlauf starten zu müssen. Es soll auch eine Statistik über die
+vom getesteten System implementierten empfohlenen Eigeschaften
+ausgegeben werden.
 
 
 ## Rollen und Zuständigkeiten
@@ -188,8 +201,8 @@ auswählt.
 ## Sprachen, Frameworks und Werkzeuge
 
 - Den Validator wollen wir in Python 2 mit Support für Python 3 entwickeln
-- Für die Validierung wollen wir Schematics verwenden
-- Als Webframework wollen wir Django oder Flask, zusammen mit Circus verwenden
+- Für die Validierung wollen wir JSON Schema und JSON-LD Kontexte verwenden
+- Als Webframework wollen wir Flask, zusammen mit Circus verwenden
 - Als Buildtool wollen wir Buildout verwenden
 - Zur Quellcodeverwaltung wollen wir Git benutzen
 
@@ -215,7 +228,7 @@ ausgearbeitete  Teil der Software angepasst werden müsste. Um dieses
 Problem abzumildern, wollen wir bis Oparl die Version 1.0 erreicht,
 ausschließlich grundlegende Funktionen und Tests implementieren. Da
 die Tests unseres Validators für zukünftige OParl-Versionen leicht
-anpassbar sein sollen, werden unerwartete Änderungen zeitlich nicht zu
+anpassbar sein sollen, werden unerwartete Änderungen zeitlich nicht zu 
 schwer in Gewicht fallen.
 
 Außerdem soll rege Kommunikation mit den Kunden dazu beitragen, dass
@@ -225,71 +238,96 @@ Spezifikation informiert werden.
 
 ## Anforderungen an die Validierung
 
-### Servereigenschaften
+Wir versuchen einen Großteil der Dokumente mit von uns definierten 
+JSON-Schemas und JSON-LD Kontexten zu testen. Folgende notwendigen oder 
+empfohlenen Eigenschaften können nicht überprüft werden und müssen 
+zusätzlich getestet werden:
 
-4.7.2: Bei Listen mit mehr als 100 Einträgen wird Paginierung empfohlen.
-Bei einer Paginierung muss jede Seite (bis auf die letzte) gleich viele
-und maximal 100 Einträge enthalten. Die Seiten müssen mit den in RFC5988
-beschriebenen HTTP-Headern verlinkt werden. Jede Seite muss mit der jeweils
-nächsten Seite verlinkt sein, optional darf sie auch mit der vorherigen,
-ersten und letzten Seite verlinkt sein.
-4.7.3: Falls eine Liste, die direkt als Wert in einem Objekt gespeichert ist,
-mehr als 100 Einträge enthält, soll sie über eine eigene URL angeboten werden.
+### Zu testende Servereigenschaften
 
-4.8: Ein Server soll die Feeds "Neue Objekte", "Geänderte Objekte" und
-"Entfernte Objekte" anbieten. Die Feeds müssen umgekehrt chronologisch
-sortiert sein und es ist empfohlen, dass sie mindestens einen Zeitraum
-von 365 Tagen abdecken. 4.8.1.: Wenn ein neues Objekt erstellt wird, 
-gilt es nicht als Änderung, es darf also nur im Feed "Neue Objekte"
+- **Paginierung:** Bei Listen mit mehr als 100 Einträgen wird 
+Paginierung empfohlen. Bei einer Paginierung muss jede Seite (bis auf 
+die letzte) gleich viele und maximal 100 Einträge enthalten. Die 
+Seiten müssen, anders als Dokumente, mit den in RFC5988 beschriebenen 
+HTTP-Headern verlinkt werden. Jede Seite muss mit der jeweils 
+nächsten Seite verlinkt sein, optional darf sie auch mit der 
+vorherigen, ersten und letzten Seite verlinkt sein. Falls eine Liste, 
+die direkt als Wert in einem Objekt gespeichert ist, mehr als 100 
+Einträge enthält, soll sie über eine eigene URL angeboten werden.
+
+- **Eindeutige URLs:** Jedes Dokument darf nur unter einer URL 
+angeboten werden, dabei sind alle Bestandteile einer URL betroffen: 
+ein Dokument darf also entweder unter http oder https erreichbar sein 
+und selbst bei einer Vertauschung der Query-Parameter Reihenfolge 
+darf nicht das selbe Dokument ausgeliefert werden, eine Weiterlung 
+mit Statuscode 301 ist aber zulässig.
+
+- **JSONP:** Es ist empfohlen JSONP anzubieten, der aktivierende 
+Parameter muss callback heißen, der Wert darf aus Sicherheitsgründen 
+nur aus Buchstaben und Zahlen bestehen, ansonsten muss mit Statuscode 
+400 geantwortet werden.
+
+- **Feeds:** Ein Server soll die Feeds "Neue Objekte", "Geänderte 
+Objekte" und "Entfernte Objekte" anbieten. Die Feeds müssen umgekehrt 
+chronologisch sortiert sein und es ist empfohlen, dass sie mindestens 
+einen Zeitraum von 365 Tagen abdecken. Wenn ein neues Objekt erstellt 
+wird, gilt es nicht als Änderung, es darf nur im Feed "Neue Objekte" 
 erscheinen, Dopplungen sind nicht erlaubt.
 
-4.9.1: HTTP-HEAD muss für alle Dateianfragen unterstüzt werden.
-4.9.2: Bei einer Dateianfrage über die Download-URL muss der Server
-einen Content-Disposition Header senden mit dem Typ "attachment" und
-dem filename-Parameter. Der Dateiname soll das angefragte Dokument 
-beschreiben (also nicht immer gleich sein). Es wir ein Dateinamen aus
-ASCII Zeichen empfohlen. Bei einer Dateianfrage über die Zugriffs-URL
-hingegen darf kein Content-Disposition Header mit Typ "attachment" gesendet
+- **Richtige Header bei Dateidownloads:** HTTP-HEAD muss für 
+Dateianfragen unterstützt werden und es muss ein Last-Modified-Header 
+mitgeschickt werden, empfohlen sind die Header "Content-Length" und 
+"ETag", weiterhin ist es empfohlen "Conditional GET" mit den 
+Parametern If-Modified-Since und If-None-Match anzubieten. Es darf 
+auch mit einer Weiterleitung geantwortet werden, je nach Situation 
+mit Statuscode 301 oder 307, bei nicht mehr vorhandenen Dateien soll 
+mit 410 geantwortet werden. Bei einer Dateianfrage über die 
+Download-URL muss der Server einen Content-Disposition Header senden 
+mit dem Typ "attachment" (im Gegensatz zur Anfrage über die 
+Zugriffs-URL) und dem filename-Parameter. Der Dateiname soll das 
+angefragte Dokument beschreiben (also nicht immer gleich sein), ein 
+Name aus ASCII Zeichen ist empfohlen. 
+
+- **Kompression:** Server sollen mindestens eines der 
+Kompressionsverfahren gzip, compress oder deflate unterstützen und 
+verwenden, falls ein Client mittels Accept-Encoding-Header diese 
+anfragt. Bereits komprimierte Dateien, wie PDF, dürfen jedoch immer 
+in einer unkomprimierten HTTP-Antwort übertragen werden. 
+
+- **Passende Statuscodes:** Bei ungültigen Anfragen, sollen die 
+entsprechenden HTTP 1.1 Statuscodes ausgegeben werden, unter anderem: 
+400 (Bad Request), 404 (Not Found) oder 405 (Method Not Allowed). 
+
+
+### Zu testende Dokumenteigeschaften
+
+- **Richtige Links:** Links müssen zum erwartete Dokumenttyp zeigen. 
+Viele Dokumenttypen müssen doppelt miteinander verlinkt werden, zum 
+Beispiel wenn eine Sitzung Tagesordnungspunkte verlinkt, muss 
+jeder Tagesordnungspunkt zur zugehörigen Sitzung zurück verlinkt sein.
+
+- **Geodaten:** Geodaten müssen im "Well-Known-Text-Format" (WKT) 
+angegeben werden und Koordinaten dürfen nur im WGS84 System angegeben 
 werden.
-4.9.3 Generell muss bei Dateianfragen ein Last-Modified-Header mitgeschickt
-werden, empfohlen sind die Header "Content-Length" und "ETag".
-4.9.4 Es ist empfohlen "Conditional GET" mit den Parametern
-If-Modified-Since und If-None-Match anzubieten.
-(Nicht gut testbar: 4.9.5 Die OParl API muss Zustandslos sein.
-Dateiurls müssen eindeutig bleiben und dürfen keine Sessioninformtionen
-beinhalten.)
-4.9.6 Beim Dateienzugriff darf mit einer Weiterleitung geantwortet
-werden, je nach Situation mit Statuscode 301 oder 307, 4.9.7,
-bei nicht mehr vorhandenen Datein soll mit 410 geantwortet werden.
 
-4.11 Server sollen mindestens eines der Kompressionsverfahren gzip,
-compress oder deflate unterstützen und verwenden, falls ein Client
-mittels Accept-Encoding-Header diese anfragt. Bereits komprimierte
-Dateien, wie PDF, dürfen immer in einer unkomprimierten HTTP-Antwort
-übertragen werden.
-4.12 Bei ungültigen Anfragen, sollen die entsprechenden HTTP 1.1
-Statuscodes ausgegeben werden, unter anderem: "Bad Request",
-"Not Found" oder "Method Not Allowed".
-4.13: Folgende URL-Parameter sind reserviert und dürfen nicht in
-der URL eines Dokuments/einer Liste benutzt werden:
-callback, startdate, enddate
+- **SKOS:** Bei manchen Dokumenten kann SKOS-Vokabular (Simple 
+Knowledge Organization System) definiert und in anderen Dokumenten 
+verwendet werden. Zum Beispiel können in einem Ausschuss, Rollen 
+angegeben werden, die dann den Mitgliedern zugewiesen werden können.
 
-5.1.1: Es sollen Unicode Strings verwendet werden
+- **nicht spezifizierte Eigenschaften:** Jedes Dokument darf 
+zusätzlich nicht von OParl spezifizierte Eigenschaften besitzen. 
+Solche Eigenschaften wollen wir erkennen und mit in die Statistik 
+aufnehmen.
 
+- Es gibt noch ein paar weitere Eigenschaften, die sich nicht mit 
+einem Schema überprüft werden können. Zum Beispiel muss es genau ein 
+Dokument vom Typ "oparl:System" geben, manche Eigenschaften haben 
+Abhängigkeiten (zum Beispiel name und nameLong dürfen nicht identisch 
+sein), bei Dateien müssen die angegebene Eigenschaften passen 
+(Checksumme, Mimetype und Größe) und die Eigenschaft @id muss immer 
+der URL entsprechen.
 
-### Dokumenteigenschaften
-5.2.3 Name und NameLong dürfen nicht identisch sein
-
-1. Backlinks sollten, sofern semantisch zwingened, zu dem richtigen Objekt
-   zurückverweisen.
-2. Die Felder `name` und `fileName` von `Document` sollen nicht identisch sein.
-3. JSON-Objekte vom Typ `Location` können Namen und Geo-Koordinaten enthalten.
-   Es gilt die Übereinstimmung dieser Daten zu validieren.
-4. Auf jedem System muss genau ein Objekt vom Typ oparl:System verfügbar sein.
-5. Elemente "rgs" eines oparl:Body sind zwölfstellig und können im Web nachgeschlagen werden.
-6. Elemente "status" eines oparl:Person sollen, so vorhanden, die weibliche und die männliche Form des Wertes in genau dieser Reihenfolge enthalten.
-7. Jedem Mitglied einer oparl:Oraganization soll ein Objekt oparl:Person zugehörig sein.
-8. Elemente "post" eines oparl:Organization sollen, so vorhanden, die weibliche und die männliche Form des Wertes in genau dieser Reihenfolge enthalten.
 
 
 ## Benotung

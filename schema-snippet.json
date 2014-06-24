@@ -1,0 +1,7 @@
+"oparl:validate": [
+    {
+        "message": "name and nameShort must not be equal",
+        "section": "5.2.3",
+        "method": "oparlvalidator.schema:name_not_equal_shortName"
+    }
+]

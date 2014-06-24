@@ -43,10 +43,10 @@
 }
 \setbeamertemplate{footline}[frame number]
 
-\title{Overview of “Automatically Generating Gene Summaries from Biomedical Literature”}
-\author{Denis “Telofy” Drescher}
+\title{OParl Validator}
+\author{The OParl Validator Team}
 \institute{FU Berlin\\Department of Computer Science}
-\date{November 13, 2013}
+\date{July 2, 2014}
 
 \begin{document}
 
@@ -55,46 +55,35 @@
 %\frame{\tableofcontents}
 
 \frame{
-    \frametitle{Related Work: Evaluation Methods}
-    \vspace{-8em}
-    \begin{itemize}[<+->]
-        \item Manual evaluation
-        \begin{itemize}[<*>]
-            \item Expensive in terms of time or money
-            \item Little agreement on assessments
-            \item Little agreement on gold standard
-        \end{itemize}        
-        \item \textsc{rouge}
-        \begin{itemize}[<*>]
-            \item Single- and multidocument summaries (better with the first)
-            \item Multiple reference summaries
-        \end{itemize}
+    \frametitle{Structure}
+    \begin{itemize}
+        \item Our client
+        \item First mockups and discussions
+        \item Methodological requirements
+        \item Server requirements
+        \item Problems with and contributions to specification
+        \item Demo
     \end{itemize}
 }
 
 \frame{
-    \frametitle{\citeauthor{ling2006automatically}: Methods}
-    \begin{itemize}[<+->]
-        \item Retrieval step
-        \begin{itemize}[<*>]
-            \item Synonyms
-            \item Tokenization
-        \end{itemize}
-        \item Summarization step
-        \begin{itemize}[<*>]
-            \item Training data from FlyBase
-            \item Stop word removal and stemming
-            \item Term vectors, using tf-idf, for the six categories
-            \begin{itemize}[<*>]
-                \item $w_{i,j} = \mbox{TF}_{i,j} \times \mbox{IDF}_{i}$, where $\mbox{IDF}_i = 1 + log \frac{N}{n_i}$
-            \end{itemize}
-            \item Category relevance measured by cosine similarity
-            \item Plus document relevance score and position
-            \item Combined score: $S = 0.5 S_c + 0.3 S_d + 0.2 S_l$
-            \item Selection of top two categories per sentence
-            \item Selection of top $k$ sentences per category
-            \item Additional summary generation
-        \end{itemize}
+    \frametitle{Methodological Requirements}
+    \begin{itemize}
+        \item JSON Schema
+        \item PEP 8
+        \item Coverage
+        \item Travis CI
+        \item OParl PyPI account
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Server Requirements}
+    \begin{itemize}
+        \item List of requirements
+        \item JSON Schema
+        \item Proprietary extensions
+            \lstinputlisting[basicstyle=\footnotesize\tt]{schema-snippet.json}
     \end{itemize}
 }
 

@@ -6,8 +6,6 @@
 \usepackage{verbatim}
 \usepackage{mdwlist}
 \usepackage{listings}
-\usepackage[notes, backend=biber]{biblatex-chicago}
-\bibliography{gismondine}
 
 \usepackage{xunicode}
 \usepackage{xltxtra}
@@ -95,11 +93,13 @@
         \item Häufige Änderungen an der Spezifikation trotz Reviewphase
         \item Kleine Änderungen: 4 Pull Requests, 4 Issues
         \item Feedback zur Verwendung von JSON-LD gegeben
+    \end{itemize}
 }
 
-\frame{
+\begin{frame}[fragile]
     \frametitle{JSON-LD}
-    \begin{verbatim}
+
+    \begin{lstlisting}[frame=single]
 {
     "@context": [
         {
@@ -116,26 +116,30 @@
     "body": "http://ris.exmaple.org/body/0",
     "name": "Erste Sitzung"
 }
-    \end{verbatim}
-    \begin{verbatim}
-    [
-  {
-    "@type": [
-      "http://oparl.org/specs/1.0/schema/Meeting"
-    ],
-    "http://oparl.org/specs/1.0/schema/body": [
-      {
-        "@id": "http://ris.exmaple.org/body/0"
-      }
-    ],
-    "http://www.w3.org/TR/rdf-schema/#label": [
-      {
-        "@value": "Erste Sitzung"
-      }
-    ]
-  }
-]
+    \end{lstlisting}
+\end{frame}
 
-}   
-    \end{verbatim}
+\begin{frame}[fragile]
+    \frametitle{JSON-LD}
+    \begin{lstlisting}[frame=single]
+[
+    {
+        "@type": [
+            "http://oparl.org/specs/1.0/schema/Meeting"
+        ],
+        "http://oparl.org/specs/1.0/schema/body": [
+            {
+                "@id": "http://ris.exmaple.org/body/0"
+            }
+        ],
+        "http://www.w3.org/TR/rdf-schema/#label": [
+            {
+                "@value": "Erste Sitzung"
+            }
+        ]
+    }
+]
+    \end{lstlisting}
+\end{frame}
+
 \end{document}

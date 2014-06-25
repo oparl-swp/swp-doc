@@ -11,7 +11,5 @@
 *.snm
 *.dia~
 *.ps
-*.eps
-*.svg
 *.bcf
 /resources/

@@ -1,0 +1,25 @@
+env:
+  global:
+    - TERM=dumb
+    - GIT_AUTHOR_NAME="Alexander Sulfrian"
+    - GIT_AUTHOR_EMAIL="alexander@sulfrian.net"
+    - GIT_COMMITTER_NAME="Alexander Sulfrian"
+    - GIT_COMMITTER_EMAIL="alexander@sulfrian.net"
+    - secure: "UUlgNdMQDftSRBHpHPuYgxUWncjs4OhnL3BFCVWACwVqW5sBga6whnj/0HP9Fw61Jz/JBiQaG2ahk+voyfgIovZ8HvwOto1e4xOh8aWOmdYP7t3W7XiBOcG2ra24QZFVb6qxZqmibEP+drCLv2qYF0u1AEqYQfInruAEAOiVLFI="
+
+install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -y texlive texlive-latex-extra texlive-generic-extra texlive-xetex texlive-lang-german fonts-linuxlibertine
+
+script:
+  - xelatex -interaction=nonstopmode half-time-presentation.tex
+
+after_script:
+  - git clone --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/oparl-swp/swp-doc.git gh-pages
+  - mkdir "gh-pages/${TRAVIS_BUILD_NUMBER}/"
+  - cp -R *.pdf "gh-pages/${TRAVIS_BUILD_NUMBER}/"
+  - echo "<html><body><ul>" > gh-pages/index.html
+  - ls -1rt gh-pages/*/*.pdf| sed 's#^gh-pages/\(.*\)$#<li><a href="\1">\1</a></li>#' >> gh-pages/index.html
+  - echo "</ul></body></html>" >> gh-pages/index.html
+  - cd gh-pages && git add -f . && git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to gh-pages" && git push origin gh-pages
+

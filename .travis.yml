@@ -13,6 +13,7 @@ install:
 
 script:
   - xelatex -interaction=nonstopmode half-time-presentation.tex
+  - xelatex -interaction=nonstopmode half-time-presentation.tex
 
 after_script:
   - git clone --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/oparl-swp/swp-doc.git gh-pages

@@ -20,7 +20,7 @@ after_script:
   - mkdir "gh-pages/${TRAVIS_BUILD_NUMBER}/"
   - cp -R *.pdf "gh-pages/${TRAVIS_BUILD_NUMBER}/"
   - echo "<html><body><ul>" > gh-pages/index.html
-  - ls -1 gh-pages/*/*.pdf | sort -rn | head -n 100 | sed 's#^gh-pages/\([^/]*\)/\(.*\)$#<li><a href="\1/\2"><b>\1:</b> \2</a></li>#' >> gh-pages/index.html
+  - ls -1 gh-pages/*/*.pdf | sed 's#^gh-pages/##' | sort -rn | head -n 100 | sed 's#^\([^/]*\)/\(.*\)$#<li><a href="\1/\2"><b>\1:</b> \2</a></li>#' >> gh-pages/index.html
   - echo "</ul></body></html>" >> gh-pages/index.html
   - cd gh-pages && git add -f . && git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to gh-pages" && git push origin gh-pages
 

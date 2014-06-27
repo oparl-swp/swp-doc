@@ -67,14 +67,14 @@
 \frame{
 	\frametitle{Unsere Kunden}
 		\begin{itemize}
-			\item direkte Kunden
+			\item Direkte Kunden
 				\begin{itemize}
 					\item Asnprechpartner und treibende Kraft: Marian Steinbach
 					\item Community: Adreas Kuckartz, Stefan
 				\end{itemize}
-			\item indirekte Kunden:
+			\item Indirekte Kunden
 					\begin{itemize}
-						\item RIS-Hersteller:
+						\item RIS-Hersteller
 							\begin {itemize}
 								\item CC e-Gov GmbH
 								\item PROVOX Systemplanung GmbH
@@ -82,18 +82,18 @@
 								\item Somacos GmbH und Co. KG
 								\item Sternberg Software-Technik GmbH
 							\end{itemize}
-						\item zukünftige Projekte, welche mit OParl konformen Daten leichter realisiert werden können    
+						\item Zukünftige Projekte, welche mit OParl-konformen Daten leichter realisiert werden können    
 					\end{itemize}
 				\end{itemize}
         }
 \frame {
 \frametitle{Unsere Arbeitsweise}
     \begin{itemize}
-        \item regelmäßige Treffen, mit Protokollierung
-        \item regelmäßige Telefonkonferenzen
+        \item Regelmäßige Treffen, mit Protokollierung
+        \item Regelmäßige Telefonkonferenzen
         \item Verwendung von Trello und GitHub zu realisierung des Kanban Prinzips
         \item Kommuniation mit Hilfe einer Mailingliste
-        \item relativ freie Zusammenarbeit mit unseren direkten Kunden
+        \item Relativ freie Zusammenarbeit mit unseren direkten Kunden
 	\end {itemize}
 	
 	}
@@ -113,10 +113,10 @@
 }
 
 \frame{
-    \frametitle{Mock like an Egyptian}
+    \frametitle{Mock Like an Egyptian}
     \begin{itemize}
         \item Web-Mock für Devs
-        \item localhost:5001 - Teste dein System
+        \item localhost:5001 -- teste dein System
         \item Kunde: "NOPE"
     \end{itemize}
 }
@@ -145,22 +145,29 @@
     \end{itemize}
 }
 
-\frame{
-    \frametitle{Server Requirements}
+\begin{frame}[fragile]
+    \frametitle{Server-Anforderungen}
     \begin{itemize}
         \item Liste der Anforderungen
         \item JSON Schema
-        \item proprietäre Erweiterungen
-            \lstinputlisting[basicstyle=\footnotesize\tt]{schema-snippet.json}
+        \item Proprietäre Erweiterungen
+            \begin{lstlisting}[basicstyle=\footnotesize\tt, xleftmargin=-64pt]
+                "oparl:validate": [
+                    {
+                        "message": "name and nameShort must not be equal",
+                        "section": "5.2.3",
+                        "method": "oparlvalidator.schema:name_not_equal_shortName"
+                    }
+                ]
+            \end{lstlisting}
     \end{itemize}
-}
-
+\end{frame}
 
 \frame{
-    \frametitle{Unsere konstruktiven Beiträge zur Spezifikation}
+    \frametitle{Unsere Beiträge zur Spezifikation}
     \begin{itemize}
         \item Häufige Änderungen an der Spezifikation trotz Reviewphase
-        \item Kleine Änderungen: 4 Pull Requests, 4 Issues
+        \item Kleine Änderungen: vier Pull Requests, vier Issues
         \item Feedback zur Verwendung von JSON-LD gegeben
     \end{itemize}
 }
@@ -168,46 +175,46 @@
 \begin{frame}[fragile]
     \frametitle{JSON-LD}
 
-    \begin{lstlisting}[frame=single]
-{
-    "@context": [
+    \begin{lstlisting}[basicstyle=\footnotesize\tt, xleftmargin=-32pt]
         {
-            "oparl": "http://oparl.org/specs/1.0/schema/",
-            "rdfs": "http://www.w3.org/TR/rdf-schema/#",
-            "body": {
-              "@id": "oparl:body",
-              "@type": "@id"
-            },
-            "name": "rdfs:label"
+            "@context": [
+                {
+                    "oparl": "http://oparl.org/specs/1.0/schema/",
+                    "rdfs": "http://www.w3.org/TR/rdf-schema/#",
+                    "body": {
+                      "@id": "oparl:body",
+                      "@type": "@id"
+                    },
+                    "name": "rdfs:label"
+                }
+            ],
+            "@type": "oparl:Meeting",
+            "body": "http://ris.exmaple.org/body/0",
+            "name": "Erste Sitzung"
         }
-    ],
-    "@type": "oparl:Meeting",
-    "body": "http://ris.exmaple.org/body/0",
-    "name": "Erste Sitzung"
-}
     \end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]
     \frametitle{JSON-LD}
-    \begin{lstlisting}[frame=single]
-[
-    {
-        "@type": [
-            "http://oparl.org/specs/1.0/schema/Meeting"
-        ],
-        "http://oparl.org/specs/1.0/schema/body": [
+    \begin{lstlisting}[basicstyle=\footnotesize\tt, xleftmargin=-32pt]
+        [
             {
-                "@id": "http://ris.exmaple.org/body/0"
-            }
-        ],
-        "http://www.w3.org/TR/rdf-schema/#label": [
-            {
-                "@value": "Erste Sitzung"
+                "@type": [
+                    "http://oparl.org/specs/1.0/schema/Meeting"
+                ],
+                "http://oparl.org/specs/1.0/schema/body": [
+                    {
+                        "@id": "http://ris.exmaple.org/body/0"
+                    }
+                ],
+                "http://www.w3.org/TR/rdf-schema/#label": [
+                    {
+                        "@value": "Erste Sitzung"
+                    }
+                ]
             }
         ]
-    }
-]
     \end{lstlisting}
 \end{frame}
 

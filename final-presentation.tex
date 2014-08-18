@@ -1,0 +1,64 @@
+\documentclass{beamer}
+
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{mdwlist}
+\usepackage{listings}
+
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\defaultfontfeatures{Mapping=tex-text}
+\setmonofont[Mapping={}, Scale=MatchLowercase]{DejaVu Sans Mono}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O}
+\setmainfont[]{Linux Libertine O}
+
+\newbox\mytempbox
+\newdimen\mytempdimen
+\newcommand\includegraphicscopyright[3][]{%
+  \leavevmode\vbox{\vskip3pt\raggedright\setbox\mytempbox=\hbox{%
+  \includegraphics[#1]{#2}}%
+    \mytempdimen=\wd\mytempbox\box\mytempbox\par\vskip1pt%
+    \fontsize{3}{3.5}\selectfont{\color{black!25}{\vbox{\hsize=\mytempdimen#3}}}\vskip3pt%
+}}
+
+\newcommand\prelim[1]{\small }
+
+\newcommand\strColor[1]{\color{beamer@blendedblue}{#1}}
+
+\newcommand\sect[1]{\begin{center}\huge\strColor{#1}\end{center}}
+
+\setbeamerfont{page number in head/foot}{size=\large}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}
+{%
+    \begin{beamercolorbox}{section in head/foot}
+        \vskip1em
+        \insertsection\hfill\includegraphics[height=5em]{FULogo_RGB.eps}\hspace{1em}
+        \vskip-5.3em
+    \end{beamercolorbox}%
+}
+\setbeamertemplate{footline}[frame number]
+
+\title{OParl-Validator}
+\author{Das OParl-Validator-Team}
+\institute{Freie Universität Berlin\\Institut für Informatik}
+\date{25. August 2014}
+
+\begin{document}
+
+\frame{\titlepage}
+
+%\frame{\tableofcontents}
+
+\frame{
+    \frametitle{Gliederung}
+    \begin{itemize}
+        \item Foobar
+        \item Ponies
+        \item Party
+    \end{itemize}
+}
+
+\end{document}

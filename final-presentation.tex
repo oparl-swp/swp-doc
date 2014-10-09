@@ -44,7 +44,7 @@
 \title{OParl-Validator}
 \author{Das OParl-Validator-Team}
 \institute{Freie Universität Berlin\\Institut für Informatik}
-\date{17. September 2014}
+\date{$n$. Oktober 2014}
 
 \begin{document}
 
@@ -64,31 +64,77 @@
 
 \frame{
     \frametitle{Organisation}
-    \begin{itemize}
+    \begin{itemize}[<+->]
         \item Prozesse
+        \begin{itemize}
+            \item Kanban auf Trello
+            \item Continuous Integration
+        \end{itemize}
         \item Meetings
-        \item Hack-a-thons
+        \begin{itemize}
+            \item Mumble und Hangout
+            \item Häufig mit Stakeholdern
+        \end{itemize}
+        \item Hack-a-thons bei Spline
         \item Protokolle
     \end{itemize}
 }
 
 \frame{
     \frametitle{Architektur}
-    \begin{itemize}
+    \begin{itemize}[<+->]
         \item Validator
+        \begin{itemize}[<*>]
+            \item Basierend auf 200606fd-Freeze (vom 22. Juli)
+            \item Mit einigen optionalen Features
+        \end{itemize}
         \item Crawler
+        \begin{itemize}[<*>]
+            \item Validiert ein komplettes System
+            \item Oder einen Teil des Systems
+        \end{itemize}
         \item Server Tests
+        \begin{itemize}[<*>]
+            \item Suite mit Anforderungen auf tieferer Abstraktionsebene
+            \item Alles aber auf Layer 7
+        \end{itemize}
         \item Command Line Interface
+        \begin{itemize}[<*>]
+            \item Gemeinsamer Entry-Point für Crawler und Einzelvalidierung
+        \end{itemize}
     \end{itemize}
 }
 
 \frame{
     \frametitle{Features}
-    \begin{itemize}
-        \item Python 2.7 und 3.3
+    \begin{itemize}[<+->]
         \item Continuous Integration
+        \begin{itemize}[<*>]
+            \item Dank Travis CI
+            \item Mit automatischer Coverage dank Coveralls
+        \end{itemize}
+        \item Python 2.7 und 3.3
+        \begin{itemize}[<*>]
+            \item \texttt{six}-Library sehr hilfreich
+            \item Continuous Integration ebenso
+        \end{itemize}
         \item Back-off Modi
+        \begin{itemize}[<*>]
+            \item Was meinte ich denn hiermit?
+        \end{itemize}
         \item Constraints
+        \begin{itemize}[<*>]
+            \item Type Whitelist, Rekursion, etc.
+        \end{itemize}
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Close-Out-Plan}
+    \begin{itemize}[<+->]
+        \item OParl 1.0 noch nicht finalisiert
+        \item Einige des Teams werden die letzten Anpassungen zu gegebener Zeit vornehmen
+        \item Einige des Teams werden das Projekt auch langfristig zusammen warten
     \end{itemize}
 }
 \end{document}

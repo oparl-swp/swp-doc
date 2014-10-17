@@ -6,6 +6,7 @@
 \usepackage{verbatim}
 \usepackage{mdwlist}
 \usepackage{listings}
+\usepackage{ragged2e}
 
 \usepackage{xunicode}
 \usepackage{xltxtra}
@@ -22,6 +23,9 @@
     \mytempdimen=\wd\mytempbox\box\mytempbox\par\vskip1pt%
     \fontsize{3}{3.5}\selectfont{\color{black!25}{\vbox{\hsize=\mytempdimen#3}}}\vskip3pt%
 }}
+
+\let\raggedright=\RaggedRight
+\hyphenation{Freeze}
 
 \newcommand\prelim[1]{\small }
 
@@ -76,34 +80,42 @@
             \item Mumble und Hangout
             \item Häufig mit Stakeholdern
         \end{itemize}
-        \item Hack-a-thons bei Spline
+        \item Hackathons bei Spline
         \item Protokolle
     \end{itemize}
 }
 
 \frame{
     \frametitle{Architektur}
-    \begin{itemize}[<+->]
-        \item Validator
-        \begin{itemize}[<*>]
-            \item Basierend auf 200606fd-Freeze (vom 22. Juli)
-            \item Mit einigen optionalen Features
-        \end{itemize}
-        \item Crawler
-        \begin{itemize}[<*>]
-            \item Validiert ein komplettes System
-            \item Oder einen Teil des Systems
-        \end{itemize}
-        \item Server Tests
-        \begin{itemize}[<*>]
-            \item Suite mit Anforderungen auf tieferer Abstraktionsebene
-            \item Alles aber auf Layer 7
-        \end{itemize}
-        \item Command Line Interface
-        \begin{itemize}[<*>]
-            \item Gemeinsamer Entry-Point für Crawler und Einzelvalidierung
-        \end{itemize}
-    \end{itemize}
+    \begin{columns}
+        \begin{column}{.5\textwidth}
+            \begin{itemize}[<+->]
+                \item Validator
+                \begin{itemize}[<*>]
+                    \item Basierend auf Freeze vom 22. Juli
+                    \item Mit einigen optionalen Features
+                \end{itemize}
+                \item Crawler
+                \begin{itemize}[<*>]
+                    \item Validiert ein komplettes System
+                    \item Oder einen Teil des Systems
+                \end{itemize}
+                \item Server Tests
+                \begin{itemize}[<*>]
+                    \item Suite mit Anforderungen auf tieferer Abstraktionsebene
+                    \item Aber auf Layer 7
+                \end{itemize}
+                \item Command Line Interface
+                \begin{itemize}[<*>]
+                    \item Gemeinsamer Entry-Point
+                \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \vspace{-.5cm}
+            \includegraphics[width=\textwidth]{architecture.final.png}
+        \end{column}
+    \end{columns}
 }
 
 \frame{

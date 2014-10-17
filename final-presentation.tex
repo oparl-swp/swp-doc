@@ -86,36 +86,7 @@
 }
 
 \frame{
-    \frametitle{Architektur}
-    \begin{columns}
-        \begin{column}{.5\textwidth}
-            \begin{itemize}[<+->]
-                \item Validator
-                \begin{itemize}[<*>]
-                    \item Basierend auf Freeze vom 22. Juli
-                    \item Mit einigen optionalen Features
-                \end{itemize}
-                \item Crawler
-                \begin{itemize}[<*>]
-                    \item Validiert ein komplettes System
-                    \item Oder einen Teil des Systems
-                \end{itemize}
-                \item Server Tests
-                \begin{itemize}[<*>]
-                    \item Suite mit Anforderungen auf tieferer Abstraktionsebene
-                    \item Aber auf Layer 7
-                \end{itemize}
-                \item Command Line Interface
-                \begin{itemize}[<*>]
-                    \item Gemeinsamer Entry-Point
-                \end{itemize}
-            \end{itemize}
-        \end{column}
-        \begin{column}{.5\textwidth}
-            \vspace{-.5cm}
-            \includegraphics[width=\textwidth]{architecture.final.png}
-        \end{column}
-    \end{columns}
+    \frametitle{Organisationsprobleme und -lösungen}
 }
 
 \frame{
@@ -138,6 +109,69 @@
         \item Constraints
         \begin{itemize}[<*>]
             \item Type Whitelist, Rekursion, etc.
+        \end{itemize}
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Featureprobleme und -lösungen}
+}
+
+\frame{
+    \frametitle{Demo}
+    Slide mit Absicht leer – mit Ausnahme der Überschrift, des FU-Logos, des Foliums und dieses Textes
+}
+
+\frame{
+    \frametitle{Architektur}
+    \begin{columns}
+        \begin{column}{.5\textwidth}
+            \begin{itemize}[<+->]
+                \item Validator
+                \begin{itemize}[<*>]
+                    \item Basierend auf Freeze vom 22. Juli
+                    \item Mit einigen optionalen Features
+                \end{itemize}
+                \item Crawler
+                \begin{itemize}[<*>]
+                    \item Validiert ein komplettes System
+                    \item Oder einen Teil des Systems
+                \end{itemize}
+                \item Server-Tests
+                \begin{itemize}[<*>]
+                    \item Suite mit Anforderungen auf tieferer Abstraktionsebene
+                    \item Aber auf Layer 7
+                \end{itemize}
+                \item Command Line Interface
+                \begin{itemize}[<*>]
+                    \item Gemeinsamer Entry-Point
+                \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \vspace{-.5cm}
+            \includegraphics[width=\textwidth]{architecture.final.png}
+        \end{column}
+    \end{columns}
+}
+
+\frame{
+    \frametitle{Architekturprobleme und -lösungen}
+    \begin{itemize}[<+->]
+        \item JSON- vs. Dict-Validierung
+        \begin{itemize}[<*>]
+            \item Dict: Vereinfacht den Code im Validator
+            \item \textbf{JSON}: Erlaubt zentrale Behandlung von Fehlern im Validator
+        \end{itemize}
+        \item Server-Tests
+        \begin{itemize}[<*>]
+            \item Parallel: Beste Abdeckung aber unzählige Requests
+            \item \textbf{Final}: Schneller, flexibler, aber erfordert Sammlung der URLs
+        \end{itemize}
+        \item Paralleles oder finales Reporting
+        \begin{itemize}[<*>]
+            \item Parallel: Der Benutzer kann abbrechen und bereits gefundene Fehler beheben
+            \item \textbf{Final}: Spart ein paar Zeilen Code
         \end{itemize}
     \end{itemize}
 }

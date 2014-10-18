@@ -24,8 +24,8 @@
     \fontsize{3}{3.5}\selectfont{\color{black!25}{\vbox{\hsize=\mytempdimen#3}}}\vskip3pt%
 }}
 
-\let\raggedright=\RaggedRight
-\hyphenation{Freeze}
+%\let\raggedright=\RaggedRight
+%\hyphenation{Freeze}
 
 \newcommand\prelim[1]{\small }
 
@@ -83,11 +83,6 @@
         \item Hackathons bei Spline
         \item Protokolle
     \end{itemize}
-    
-    
- 
-
-
 }
 
 \frame{
@@ -130,12 +125,11 @@
 \frame{
     \frametitle{Architektur}
     \begin{columns}
-        \begin{column}{.5\textwidth}
+        \begin{column}{.6\textwidth}
             \begin{itemize}[<+->]
-                \item Validator
+                \item Command Line Interface
                 \begin{itemize}[<*>]
-                    \item Basierend auf Freeze vom 22. Juli
-                    \item Mit einigen optionalen Features
+                    \item Gemeinsamer Entry-Point
                 \end{itemize}
                 \item Crawler
                 \begin{itemize}[<*>]
@@ -147,15 +141,16 @@
                     \item Suite mit Anforderungen auf tieferer Abstraktionsebene
                     \item Aber auf Layer 7
                 \end{itemize}
-                \item Command Line Interface
+                \item Validator
                 \begin{itemize}[<*>]
-                    \item Gemeinsamer Entry-Point
+                    \item Basierend auf Freeze vom 22. Juli
+                    \item Mit einigen optionalen Features
                 \end{itemize}
             \end{itemize}
         \end{column}
-        \begin{column}{.5\textwidth}
-            \vspace{-.5cm}
-            \includegraphics[width=\textwidth]{architecture.final.png}
+        \begin{column}{.4\textwidth}
+            \hspace{-1cm}
+            \includegraphics[width=1.2\textwidth]{architecture.final.png}
         \end{column}
     \end{columns}
 }
@@ -175,8 +170,11 @@
         \end{itemize}
         \item Paralleles oder finales Reporting
         \begin{itemize}[<*>]
-            \item Parallel: Der Benutzer kann abbrechen und bereits gefundene Fehler beheben
-            \item \textbf{Final}: Spart ein paar Zeilen Code
+            \item \textbf{Parallel}: Der Benutzer kann abbrechen und bereits gefundene Fehler beheben
+            \begin{itemize}[<*>]
+                \item Einfach durch Generatoren in Python umsetzbar
+            \end{itemize}
+            \item Final: Spart ein paar Zeilen Code
         \end{itemize}
     \end{itemize}
 }
@@ -190,9 +188,8 @@
     \end{itemize}
 }
 \end{document}
-   Organisation: 
 
-
+Organisation:
 
 1. Unsere Kunden:
 

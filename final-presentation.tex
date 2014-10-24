@@ -71,8 +71,8 @@
     \frametitle{Organisation}
     \begin{itemize}[<+->]
         \item Unsere Kunden
-        \item Unsere Arbeitsweise
-        \item Unsere Milestones
+        \item Unsere Arbeitsweise: Fazit
+        \item Unsere Milestones: Fazit
      \end{itemize}
 }
 
@@ -80,12 +80,12 @@
 \frametitle{Unsere Kunden}
     \begin{itemize}[<+->]
         \item direkt: 
-        	\begin{itemize}
+       		\begin{itemize}[<*>]
         		\item OParl Entwickler(Kontakt: Marian(hauptsächlich: fusepool finanziert eu projekt; aus Köln; Lucas hat ihn getroffen),
 			\item Community:  Andreas(semantic-web-consultant), Stefan )
         	\end{itemize}
         \item indirekt
-        	\begin{itemize}
+        	\begin{itemize}[<*>]
         		\item RIS Hersteller wie CC e-Gov GmbH , PROVOX Systemplanung GmbH ,QuinScape GmbH , Somacos GmbH und Co. KG,Sternberg Software-Technik GmbH ,
         			sowie zukünftige Projekte, welche den OParl verwenden wollen--> Nutzer 
       		\end{itemize}
@@ -95,21 +95,100 @@
 
 }
 
+
+
 \frame{
-    \frametitle{Organisationsprobleme und -lösungen}
-    \begin{itemize}[<+->]
-        \item Doodle vs. feste Treffen
-        \begin{itemize}[<*>]
-            \item Doodle: Flexibel
-            \item \textbf{Feste Treffen}: Verlässlich und langfristig planbar
-        \end{itemize}
-        \item Hackathons
-        \begin{itemize}[<*>]
-            \item Die regelmäßigen Treffen wurden hauptsächlich zur Koordination mit den Stakeholdern gebraucht
-            \item Separate Hackathons dienten dazu sich gegenseitig mit Low-Level-Problemen zu helfen
-        \end{itemize}
-    \end{itemize}
+\frametitle{Unsere Arbeitsweise: Fazit}
+	\begin{itemize}[<+->]
+		\item Kein Vertrag freies miteinander Arbeiten: 
+			\begin{itemize}[<*>]
+				\item Verantwortlicher sollte bestimmt werden
+			\end{itemize}
+		\item Regelmäßige Treffen Mittwochs, bei denen auch die Kunden mittels Telefon eingebunden werden:
+			\begin{itemize}[<*>]
+				\item zur lückenlosen Zusammenarbeit sehr förderlich
+				\item Telefonate haben sich als sehr Zeitaufwändig herausgestellt
+				\item eventuell sollten Telefonate mit dem Kunden nur von einem Projektteilnehemer durchgeführt werden
+				\item alternativ: mehr Mumblen
+			\end{itemize}
+		\item Eine regelmäßige Telefonkonferenz am Freitag, bei der auch unsere Kunden eingebunden werden :
+			
+			\begin{itemize}[<*>]
+				\item hat sich als sehr hilfreich erwiesen
+			\end{itemize}
+		
+		\item Kanban:
+			
+			\begin{itemize}[<*>]
+				\item Hat durch die Verwendung von Trello gut funktioniert
+				\item es müssten mehr Boards angelegt werden
+				\item konsequentere Verwendung von Trello
+				\item teilweise schwer geeignete Aufgaben zu finden
+			\end{itemize}
+			
+		\item Mailingliste:
+			
+			\begin{itemize}[<*>]
+				\item sehr hilfreiches Mittel
+			\end{itemize}	
+		
+		\item Hack-a-thons bei Spline:
+		
+			\begin{itemize}[<*>]
+				\item sehr produktiv
+				\item generell mehr gemeinsames Coden
+			\end{itemize}
+		\item Protokollierung der Meetings:
+		
+			\begin{itemize}[<*>]
+				\item vereinfacht es  Übersicht zu behalten
+				\item hilft bei der Dokumentation 
+			\end{itemize}
 }
+
+
+\frame{
+	\frametitle{Unsere Milestones: Fazit}
+	\begin{itemize}[<+->]
+		\item 1. "Zwei Wochen nach Projektstart, wollen wir zwei minimale Projekte in einer Form haben, die es erlaubt sie zu deployen:
+		die Validator-Library wird noch jegliche JSON-Objekte ablehnen, doch ihre Interfaces sollen bereits auf das Frontend-Projekt abgestimmt sein. 
+		Das Frontend-Projekt soll eine minimale Eingabemaske für JSON-Objekte zur Verfügung stellen und zur Validierung auf die Library zurückgreifen. 
+		Auf diese Seite können wir den Product Owners bereits Zugriff gewähren."
+		
+			\begin{itemize}[<*>]
+        			 \item Frontend auf Wunsch der Kunden zurückgestellt
+        			 \item JSON-Objekte konnten, wei geplant, über das CLI eingegeben und von der Library getestet werden
+			\end{itemize}
+		
+		\item 2. " Ein existierender Server, der Testdaten ausliefert, soll erweitert worden sein, und der Validator soll bereits grundlegende Tests durchführen können.
+			Das Web-Frontend soll derweil benutzerfreundlicher sein, ins besondere im Bezug auf die Fehlerberichterstattung. "
+			\begin{itemize}[<*>]
+        			 \item Es wurden grundlegende Server Tests implementiert
+        		\end{itemize}
+		
+		\item 3. " Gerade alle syntaktisch korrekten Objekte sollen akzeptiert werden,
+			und das Frontend-Projekt soll auch JSONs über HTTP und HTTPS abrufen und validieren können. "
+			\begin{itemize}[<*>]
+        			\item Diskussion über die Unterstützung von JSON-LD verlansamte unsere Arbeit
+        			\item Objekte können mit einer URL eingebunden und validiert werden
+        	 	\end{itemize}	
+               	
+               	\item 4." Der Validator soll auch JSON-LD-Referenzen validieren, auch unter Beachtung von Weltwissen über die in den JSON-Objekten abgebildeten politischen Körper.
+               		Das Frontend-Projekt soll Hilfestellungen zur Lösung typischer Fehler leisten."
+               		\begin{itemize}[<*>]
+        			 \item JSON-LD wird nicht komplett unterstützt
+        			 \item es wurden spezielle Tests für die Fälle Entwickelt, die JSON-Schema nicht prüfen kann
+        		\end{itemize}	
+		
+		\item 5. " Um Hierarchien von Objekten vollständig und stichpunktartig validieren zu können,
+			soll ein Crawler eine größere Anzahl von JSON-Objekten gezielt abrufen und in Bezugnahme aufeinander validieren können. "
+		
+			\begin{itemize}[<*>]
+        			 \item Der Crawler kann LD-Struktur durchsuchen und die Objekte validieren
+           		\end{itemize}	
+	\end{itemize}
+}
+
 
 \frame{
     \frametitle{Features}
@@ -219,90 +298,3 @@
 }
 \end{document}
 
-Organisation: 
-
-
-
-1. Unsere Kunden:
-
-- direkt: OParl Entwickler(Kontakt: Marian(hauptsächlich: fusepool finanziert eu projekt; aus Köln; Lucas hat ihn getroffen),
-Community:  Andreas(semantic-web-consultant), Stefan )
-
-
-- indirekt:  RIS Hersteller wie CC e-Gov GmbH , PROVOX Systemplanung GmbH ,QuinScape GmbH , Somacos GmbH und Co. KG,Sternberg Software-Technik GmbH , sowie zukünftige Projekte, welche den OParl verwenden wollen
---> Nutzer 
-
-2. Unsere Arbeitsweise: Fazit
-
-- Kein Vertrag freies miteinander Arbeiten hat sich bewährt:
-	Es sollte ein Verantwortlicher bestimmte werden, der die Koordination übernimmt
-
-- Regelmäßige Treffen Mittwochs, bei denen auch die Kunden mittels Telefon eingebunden werden: 
-	Treffen sind zur lückenlosen Zusammenarbeit sehr förderlich
-	Telefonate sind sehr Zeitaufwändig 
-	eventuell nur einen Projektteilnehmer beauftragen Korrespondenz zu halten
-	alternativ mehr Mumblen
-
-- Eine regelmäßige Telefonkonferenz am Freitag, bei der auch unsere Kunden eingebunden werden :
-		erwies sich als hilfreich 
-		eventuell auch mit Kunden 
-		
-
-	
-- Kanban Prinzip:
-	Hat durch die Verwendung von Trelle gut funktionierte	
-	eventuell müssten die Boards noch erweitert werden
-	Teilnehmer sollten den Verlauf in Trello noch konsequenter folgen
-	
-- Es herrschte Kommunikation mit Hilfe unserer Mailingliste:
-	hat sich als sehr hilfreich erwiesen 
-- Aufgaben werden nach Fähigkeiten und Dringlichkeit gewählt(Kanban):
-	verlief positiv, wobei es bei Weilen schwer war geeignete Aufgaben zu finden
-
-- Hack-a-thons bei Spline:
-	sehr produktiv
-	öfteres gemeinsames Coden wäre gut gewesen
-
-- Protokollieren der Treffen
-	hat gut funktioniert 
-	hilfreiches Mittel
-
-
-3. Unsere Milestones: Fazit
-
-3.1.
-Zwei Wochen nach Projektstart, wollen wir zwei minimale Projekte in einer Form haben, die es erlaubt sie zu deployen: die Validator-Library wird noch jegliche JSON-Objekte ablehnen, doch ihre Interfaces sollen bereits auf das Frontend-Projekt abgestimmt sein. Das Frontend-Projekt soll eine minimale Eingabemaske für JSON-Objekte zur Verfügung stellen und zur Validierung auf die Library zurückgreifen. Auf diese Seite können wir den Product Owners bereits Zugriff gewähren. 
-
-Ergebnis: 
-		Frontend wurde zurückgestellt
-		JSON-OBJEKTE konnten wie geplant in unser CLI eingegeben und mittels der Library geprüft werden
-3.2. 
-Ein existierender Server, der Testdaten ausliefert, soll erweitert worden sein, und der Validator soll bereits grundlegende Tests durchführen können. Das Web-Frontend soll derweil benutzerfreundlicher sein, ins besondere im Bezug auf die Fehlerberichterstattung. 
-
-Ergebenis: 
-		Es wurden grundlegende Server-Tests implementiert
-		Web-Frontend wurde auf Wunsch des Kunden nicht weiter bearbeitet
-		 
-
-3.3.
-Gerade alle syntaktisch korrekten Objekte sollen akzeptiert werden, und das Frontend-Projekt soll auch JSONs über HTTP und HTTPS abrufen und validieren können. 
-
-Ergebnis: 
-	Die Diskussion über die Untertützung von JSON_LD verlangsamte unser Vorankommen 
-	Es konnten nun auch Objekte über URL eingebunden werden 
-
-3.4. 
-Der Validator soll auch JSON-LD-Referenzen validieren, auch unter Beachtung von Weltwissen über die in den JSON-Objekten abgebildeten politischen Körper. Das Frontend-Projekt soll Hilfestellungen zur Lösung typischer Fehler leisten. 
-
-Ergebnis: 
-		JSON-LD wird nicht komplett unterstüzt 
-		Es wurden zusätzlich Tests für spezielle Fälle, welche von JSON-			
-		Schema nicht erfasst werden können, hinzugefügt
-	
-
-3.5.
-
-Um Hierarchien von Objekten vollständig und stichpunktartig validieren zu können, soll ein Crawler eine größere Anzahl von JSON-Objekten gezielt abrufen und in Bezugnahme aufeinander validieren können. 
-
-	Ergebnis: 
-			Der Crawler kann eine LD Struktur durchsuchen und diese mittels der Library validieren

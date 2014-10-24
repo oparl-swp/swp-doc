@@ -1,0 +1,56 @@
+\documentclass[12pt, fleqn]{scrartcl}
+
+\usepackage[singlecolumn, german]{fnordstyle}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{picins}
+\usepackage{verbatim}
+\usepackage{tabularx}
+\usepackage{csquotes}
+\usepackage[style=mla, backend=biber]{biblatex}
+\bibliography{oparl}
+%\typearea{11}
+
+\setlength{\abovecaptionskip}{-1em}
+\setlength{\belowcaptionskip}{1em}
+\let\oldnewcaption\newcaption
+\renewcommand{\newcaption}[1]{
+    \vspace{-1em}
+    \oldnewcaption{#1}
+    \vspace{1em}
+}
+
+\setcounter{tocdepth}{2}
+
+\newcommand{\autocitenp}[2][]{\citeauthor{#2} \autocite*[#1]{#2}}
+
+\hyphenation{mne-mon-ic}
+
+\title{OParl-Validator-Protokoll}
+%\subtitle{Flauschnotizen}
+\author{Alex, Jo, Lucas, Ronald, Telofy}
+\date{\today}
+
+\begin{document}
+
+\Maketitle
+
+\section{Einführung}
+\section{Organisation}
+\section{Features}
+\section{Demo}
+\section{Architektur}
+\section{Close-Out-Plan}
+
+%\newpage
+
+\phantomsection
+\addcontentsline{toc}{section}{References}
+\setlength\bibitemsep{0pt}
+\printbibliography
+
+\end{document}
+
+Count
+    
+    grep -vE '^[\\ %}]' protocol.tex | wc

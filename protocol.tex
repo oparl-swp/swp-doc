@@ -40,7 +40,23 @@
 
 \subsection{OParl}
 
+Die Arbeit an OParl wurde begonnen, um einen einheitlichen Austausch von Parlamentsdaten zwischen Ratsinformationssystemen und Bürgerinformationssystemen zu ermöglichen, sowie auch, um Außenstehenden einen standardisierten Zugriff auf die verschiedenen genannten Systeme zu gewähren. Initiativen wie Offenes Köln, Frankfurt Gestalten und die Parlamentwatch e.\,V. haben bereits in begrenztem Rahmen aufgezeigt, welche Möglichkeiten in parlamentarischer Transparenz liegen, aber diese Lösungen sind noch stark dadurch eingeschränkt, dass sie zum Beispiel auf Screen Scraping von einem speziellen Ratsinformationssystem (RIS) basieren. OParl kann ihre Arbeit einfacher und universeller machen.
 
+Die OParl-Initiative, geleitet von Jens Klessmann (Fraunhofer FOKUS), Marian Steinbach (Offenes Köln), Marianne Wulff (VITAKO) und Christine Siegfried (VITAKO), hat daher Kooperationen mit diversen RIS-Herstellern und transparenznahen Projekten geknüpft, und die Arbeit an dem gleichnamigen Kommunikationsstandard begonnen.
+
+\subsection{Status}
+
+Nachdem die Veröffentlichung von OParl schon von Anfang auf Ende Juni verschoben werden musste, stellte sich heraus, dass die geplante Verwendung von JSON-LD zu erheblichen Verzögerungen führen würde, und außerdem, wegen der geringen Verbreitung des Standards, auch Probleme für die RIS-Hersteller mit sich bringen würde. Die Entscheidung eine JSON-LD-Unterstützung auf eine spätere Version von OParl zu verschieben, rief interpersonelle Differenzen hervor, die in der Abspaltung eines konkurrierenden JSON-LD-Forks von OParl von einem der ehemaligen Entwickler kulminierte.
+
+OParl wurde in Folge auf einen JSON-LD-losen Stand gebracht, doch auch die damit verbundenen Arbeiten sowie andere Korrekturen am Standard dauern weiter an.
+
+\subsection{Validator}
+
+Um den RIS-Herstellern und anderen interessierten Entwicklern eine einfache Möglichkeit an die Hand zu geben, zu testen, ob sie den Standard korrekt implementiert haben, war von Anbeginn an geplant, einen Validator für OParl zu entwickeln. Mit dem Start unseres Softwareprojektes bekam dieser Teilbereich unsere Verantwortlichkeit.
+
+Der dynamische Zustand unseres Referenzstandards machte es notwendig, dass wir uns relativ beliebige aber möglichst günstige Commits der Spezifikation als Freezes herauspickten, um zunächst diese Versionen im Validator umzusetzen. Der lange Hiatus, der mit der JSON-LD-Debatte einherging, hielt somit den Validator für einige Zeit auf einem Stand der Spezifikation, der in Folge grundlegend umstrukturiert wurde. Dies bedeutete auch für uns einen Zeitverlust.
+
+Da nunmehr immer noch keine 1.0-Version von OParl verabschiedet wurde, richten wir uns weiterhin nach einem solchen selbstgewählten Freeze (200606f).
 
 \section{Organisation}
 \section{Features}

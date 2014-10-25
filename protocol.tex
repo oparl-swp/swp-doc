@@ -37,6 +37,11 @@
 \Maketitle
 
 \section{Einführung}
+
+\subsection{OParl}
+
+
+
 \section{Organisation}
 \section{Features}
 \section{Demo}
@@ -51,9 +56,9 @@
 
 \subsection{Idee}
 
-Die Grundidee hinter der Architektur unseres Projektes basiert auf dem Mantra, dass, wenn man ein Command-Line-Tool entwickeln möchte, man erst eine Library entwickeln soll, welche die Arbeit tut, und dann ein Command-Line-Tool als Frontend für sie schreiben soll.
+Die Grundidee hinter der Architektur unseres Projektes basiert auf dem Mantra, dass, wenn man ein Command-Line-Tool entwickeln möchte, man erst eine Library entwickeln soll, welche die eigentliche Arbeit verrichtet, und dann ein Command-Line-Tool als Frontend für sie schreiben soll.
 
-Das ist eine sehr nützliche Vorgehensweise, da sie alle Vorteile von Command-Line-Tools beibehält, während sie es Entwicklern ermöglicht, von der Flexibilität der eigentlichen Library zu profitieren. Git, zum Beispiel, basiert auf dieser Architektur.
+Das ist eine nützliche Vorgehensweise, da sie alle Vorteile von Command-Line-Tools beibehält, während sie es Entwicklern ermöglicht, von der Flexibilität der eigentlichen Library zu profitieren. Git, zum Beispiel, basiert auf diesem Architekturprinzip.
 
 In unserem Fall ist es so, dass es von Anfang an unser Anspruch war, beides, eine Library und ein Command-Line-Tool, zu entwickeln. Letzteres ist im selben Projekt aufgehoben, die Library aber kann auch mit anderen Frontends verwendet werden.
 
@@ -80,11 +85,12 @@ Es gibt eine Reihe weiterer Features von OParl, die es erfordern, dezidierte Req
 \subsection{Crawler}
 
 % Outtake: Wenn das JSON-Schema das Herzstück unseres Validators ist, dann ist der Crawler Haut und Brustbehaarung.
-% Outtake: Wenn das JSON-Schema das Herzstück unseres Validators ist, dann isst der Crawler seine Extremitäten.
 
-Wenn das JSON-Schema das Herzstück unseres Validators ist, dann ist der Crawler seine Extremitäten und sein Schweif.
+Wenn das JSON-Schema das Herzstück unseres Validators ist, dann ist der Crawler seine Extremitäten und sein Schweif. Der Crawler folgt der üblichen Architektur, die aus einem Fetching-Modul, einem Link-Extractor und einem Hashtable als Speicher für bereits besuchte URLs besteht. Da er die geladenen JSON-Objekte \emph{just in time} validiert, müssen sie nach Abschluss der Validierung nicht länger vorgehalten werden. Gespeichert werden lediglich die URLs, wobei strenggenommen auch die URLs von validen und fehlerhaften Objekten unterschieden werden.
 
+Die erste URL, die gespeichert wird, ist die Seed-URL, die man zum Beispiel via des Command-Line-Interfaces übergibt. Von dieser URL ausgehend, führt der Crawler eine gefilterte Breitensuche über dem OParl-Graphen durch, wobei die Filterkriterien, insbesondere die Typen-Whitelist, vom Nutzer° vorgegeben werden können.
 
+Den Schweif des Crawlers bildet ein Aufruf der obengenannten Server-Tests mit den gesammelten validen URLs.
 
 \section{Close-Out-Plan}
 

@@ -104,7 +104,7 @@
 }
 
 \frame{
-\frametitle{Unsere Arbeitsweise: Fazit}
+    \frametitle{Unsere Arbeitsweise: Fazit}
     \begin{itemize}[<+->]
         \item Kein Vertrag freies miteinander Arbeiten: 
         \begin{itemize}[<*>]
@@ -117,6 +117,12 @@
             \item Eventuell sollten Telefonate mit dem Kunden nur von einem Projektteilnehemer durchgeführt werden
             \item Alternativ: mehr Mumblen
         \end{itemize}
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Unsere Arbeitsweise: Fazit}
+    \begin{itemize}[<+->]
         \item Eine regelmäßige Telefonkonferenz am Freitag, bei der auch unsere Kunden eingebunden werden
         \begin{itemize}[<*>]
             \item hat sich als sehr hilfreich erwiesen
@@ -131,7 +137,13 @@
         \item Mailingliste
         \begin{itemize}[<*>]
             \item Sehr hilfreiches Mittel
-        \end{itemize}   
+        \end{itemize}
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Unsere Arbeitsweise: Fazit}
+    \begin{itemize}[<+->]
         \item Hackathons bei Spline:
         \begin{itemize}[<*>]
             \item Sehr produktiv
@@ -148,26 +160,50 @@
 \frame{
     \frametitle{Unsere Milestones: Fazit}
     \begin{itemize}[<+->]
-        \item 1. »Zwei Wochen nach Projektstart, wollen wir zwei minimale Projekte in einer Form haben, die es erlaubt sie zu deployen: die Validator-Library wird noch jegliche JSON-Objekte ablehnen, doch ihre Interfaces sollen bereits auf das Frontend-Projekt abgestimmt sein. Das Frontend-Projekt soll eine minimale Eingabemaske für JSON-Objekte zur Verfügung stellen und zur Validierung auf die Library zurückgreifen. Auf diese Seite können wir den Product Owners bereits Zugriff gewähren.«
+        \item »Zwei Wochen nach Projektstart, wollen wir zwei minimale Projekte in einer Form haben, die es erlaubt sie zu deployen: die Validator-Library wird noch jegliche JSON-Objekte ablehnen, doch ihre Interfaces sollen bereits auf das Frontend-Projekt abgestimmt sein. Das Frontend-Projekt soll eine minimale Eingabemaske für JSON-Objekte zur Verfügung stellen und zur Validierung auf die Library zurückgreifen. Auf diese Seite können wir den Product Owners bereits Zugriff gewähren.«
         \begin{itemize}[<*>]
              \item Frontend auf Wunsch der Kunden zurückgestellt
              \item JSON-Objekte konnten, wei geplant, über das CLI eingegeben und von der Library getestet werden
         \end{itemize}
-        \item 2. »Ein existierender Server, der Testdaten ausliefert, soll erweitert worden sein, und der Validator soll bereits grundlegende Tests durchführen können. Das Web-Frontend soll derweil benutzerfreundlicher sein, ins besondere im Bezug auf die Fehlerberichterstattung.«
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Unsere Milestones: Fazit}
+    \begin{itemize}[<+->]
+        \item »Ein existierender Server, der Testdaten ausliefert, soll erweitert worden sein, und der Validator soll bereits grundlegende Tests durchführen können. Das Web-Frontend soll derweil benutzerfreundlicher sein, ins besondere im Bezug auf die Fehlerberichterstattung.«
         \begin{itemize}[<*>]
             \item Es wurden grundlegende Server Tests implementiert
         \end{itemize}
-        \item 3. »Gerade alle syntaktisch korrekten Objekte sollen akzeptiert werden, und das Frontend-Projekt soll auch JSONs über HTTP und HTTPS abrufen und validieren können.«
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Unsere Milestones: Fazit}
+    \begin{itemize}[<+->]
+        \item »Gerade alle syntaktisch korrekten Objekte sollen akzeptiert werden, und das Frontend-Projekt soll auch JSONs über HTTP und HTTPS abrufen und validieren können.«
         \begin{itemize}[<*>]
             \item Diskussion über die Unterstützung von JSON-LD verlansamte unsere Arbeit
             \item Objekte können mit einer URL eingebunden und validiert werden
         \end{itemize}   
-        \item 4. »Der Validator soll auch JSON-LD-Referenzen validieren, auch unter Beachtung von Weltwissen über die in den JSON-Objekten abgebildeten politischen Körper. Das Frontend-Projekt soll Hilfestellungen zur Lösung typischer Fehler leisten.«
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Unsere Milestones: Fazit}
+    \begin{itemize}[<+->]
+        \item »Der Validator soll auch JSON-LD-Referenzen validieren, auch unter Beachtung von Weltwissen über die in den JSON-Objekten abgebildeten politischen Körper. Das Frontend-Projekt soll Hilfestellungen zur Lösung typischer Fehler leisten.«
         \begin{itemize}[<*>]
             \item JSON-LD wird nicht komplett unterstützt
             \item es wurden spezielle Tests für die Fälle Entwickelt, die JSON-Schema nicht prüfen kann
         \end{itemize}   
-        \item 5. »Um Hierarchien von Objekten vollständig und stichpunktartig validieren zu können, soll ein Crawler eine größere Anzahl von JSON-Objekten gezielt abrufen und in Bezugnahme aufeinander validieren können.«
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Unsere Milestones: Fazit}
+    \begin{itemize}[<+->]
+        \item »Um Hierarchien von Objekten vollständig und stichpunktartig validieren zu können, soll ein Crawler eine größere Anzahl von JSON-Objekten gezielt abrufen und in Bezugnahme aufeinander validieren können.«
         \begin{itemize}[<*>]
              \item Der Crawler kann LD-Struktur durchsuchen und die Objekte validieren
         \end{itemize}   
@@ -177,6 +213,14 @@
 \frame{
     \frametitle{Features}
     \begin{itemize}[<+->]
+        \item CLI-Tool zur Validierung direktem Inputs und eines ganzen Systems rekursiv
+        \begin{itemize}[<*>]
+            \item Hilfreiche Fehlermeldungen
+            \item Zusammenfassende Statistiken
+        \end{itemize}
+        \item Webservice mit CLI-äquivalentem Funktionsumfang verworfen, da nicht vom Kunden erwünscht
+        \item Validator als Library, die von beliebigen Frontends verwendet werden kann
+        \item Vorbereitet auf zukünftige Versionen von OParl
         \item Continuous Integration
         \begin{itemize}[<*>]
             \item Dank Travis CI
